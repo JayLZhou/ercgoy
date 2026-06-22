@@ -29,7 +29,6 @@
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="#vision">Vision</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="people.html">People</a></li>
           <li><a href="publications.html">Publications</a></li>
@@ -50,7 +49,6 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#vision">Vision</a>
     <a href="#research">Research</a>
     <a href="people.html">People</a>
     <a href="publications.html">Publications</a>
@@ -77,8 +75,8 @@
           shift that makes causal reasoning a native, first-class capability of graph database systems.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#vision">
-            Explore the vision
+          <a class="btn btn-primary" href="#about">
+            Explore the project
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn-ghost" href="people.html#positions">We’re hiring · PhD &amp; Postdoc</a>
@@ -100,8 +98,8 @@
     </div>
   </section>
 
-  <!-- ============ VISION / ABOUT ============ -->
-  <section id="vision">
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
     <div class="container">
       <div class="split">
         <div class="reveal">
@@ -110,21 +108,17 @@
           <div class="prose" style="margin-top:1.6rem">
             <p class="lead-para">
               Causal scientists draw <strong>causal DAGs</strong> and reason over them with <em>do</em>-calculus and
-              ad-hoc scripts. Graph databases query connected data at scale with declarative languages
-              like Cypher and the ISO <span class="mono">GQL</span> standard. Yet the two communities work
-              in isolation.
+              ad-hoc scripts. Graph databases query connected data at scale with declarative languages like
+              Cypher and the ISO <span class="mono">GQL</span> standard. Yet the two communities work in isolation.
             </p>
             <p>
-              The result: causal graphs live <em>outside</em> any database — hand-curated artifacts that are never
-              systematically validated, stored, integrated, queried or versioned. Meanwhile graph database
-              systems remain <strong>causally blind</strong>: they answer “what is connected to what” and “how to
-              traverse”, but never “why”, and never “what if we intervene”.
+              <strong>GO-Y closes this gap.</strong> Causal graphs are no longer hand-curated files living outside the
+              database — they become first-class, queryable, versioned data. GO-Y turns causal reasoning from a
+              bespoke scripting exercise into a rigorous, reproducible data-management discipline.
             </p>
-            <p>
-              <strong>GO-Y closes this gap.</strong> It turns causal reasoning from a bespoke, error-prone scripting
-              exercise into a rigorous, reproducible data-management discipline — a completely novel approach
-              to data management guided by the theory of causation.
-            </p>
+          </div>
+          <div class="hero-cta" style="margin-top:1.8rem">
+            <a class="btn btn-ghost" href="#research">See the research →</a>
           </div>
         </div>
         <div class="reveal" data-delay="1">
@@ -136,20 +130,16 @@
                 <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
                 <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#f4c25a"/></marker>
               </defs>
-              <!-- left cluster: graph database -->
               <circle cx="78" cy="70" r="40" fill="url(#bg1)" opacity="0.10"/>
               <text x="78" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">GRAPH DB</text>
               <g stroke="#5b8cff" stroke-width="1.6" opacity="0.55"><line x1="60" y1="58" x2="96" y2="58"/><line x1="60" y1="58" x2="78" y2="88"/><line x1="96" y1="58" x2="78" y2="88"/></g>
               <circle cx="60" cy="58" r="6" fill="#5b8cff"/><circle cx="96" cy="58" r="6" fill="#5b8cff"/><circle cx="78" cy="88" r="6" fill="#5b8cff"/>
-              <!-- right cluster: causal model -->
               <circle cx="282" cy="70" r="40" fill="url(#bg2)" opacity="0.10"/>
               <text x="282" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">CAUSAL DAG</text>
               <g stroke="#f4c25a" stroke-width="1.8" marker-end="url(#ah)" fill="none" opacity="0.8"><line x1="266" y1="52" x2="252" y2="86"/><line x1="298" y1="52" x2="312" y2="86"/><line x1="258" y1="92" x2="306" y2="92"/></g>
               <circle cx="266" cy="50" r="6" fill="#f4c25a"/><circle cx="298" cy="50" r="6" fill="#f4c25a"/><circle cx="252" cy="92" r="6" fill="#f4c25a"/><circle cx="312" cy="92" r="6" fill="#f4c25a"/>
-              <!-- merge arrows -->
               <path d="M95 110 Q150 165 175 195" stroke="#5b8cff" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
               <path d="M265 110 Q210 165 185 195" stroke="#2fe0c8" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
-              <!-- unified: causal property graph -->
               <text x="180" y="318" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#2fe0c8">CAUSAL PROPERTY GRAPH</text>
               <g stroke="#cbd6ff" stroke-width="1.4" opacity="0.35" fill="none">
                 <line x1="180" y1="215" x2="130" y2="255"/><line x1="180" y1="215" x2="230" y2="255"/>
@@ -170,20 +160,9 @@
     </div>
   </section>
 
-  <!-- ============ MISSION QUOTE ============ -->
-  <section style="padding-top:0">
-    <div class="container-narrow">
-      <div class="mission reveal">
-        <p class="q">“GO-Y pursues a radical shift towards causality-driven graph databases — laying solid
-          theoretical foundations and the tools that underpin causal graph operations.”</p>
-        <span class="cite">— GO-Y project abstract · PI Prof. Angela Bonifati</span>
-      </div>
-    </div>
-  </section>
-
   <hr class="section-divider" />
 
-  <!-- ============ RESEARCH OBJECTIVES ============ -->
+  <!-- ============ RESEARCH ============ -->
   <section id="research">
     <div class="container">
       <div class="section-head center reveal">
@@ -254,27 +233,6 @@
        <span style="color:var(--accent-3)">AS</span> averted_risk</pre>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- ============ KEY CONCEPTS ============ -->
-  <section id="concepts">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">The vocabulary</span>
-        <h2>Key concepts</h2>
-        <p>The ideas GO-Y brings together — one from data management, one from the theory of causation.</p>
-      </div>
-      <div class="concepts">
-        <div class="concept reveal"><span class="term">Causal property graph</span><span class="def">The project’s central new structure: a labelled property graph endowed with causal semantics, so causal relationships, interventions and assumptions become first-class, storable, queryable and versionable elements of a graph database.</span></div>
-        <div class="concept reveal"><span class="term">Causal query operators</span><span class="def">New operators that express causal questions directly over stored graphs: interventions (the <span class="mono">do</span>-operator), counterfactual / “what-if” queries, confounder and adjustment-set identification, and <span class="mono">d</span>-separation reasoning.</span></div>
-        <div class="concept reveal"><span class="term">Causal DAG</span><span class="def">A directed acyclic graph whose edges encode cause–effect relationships among variables — the workhorse of causal inference, which GO-Y manages as a validated, integrated, versioned database artifact.</span></div>
-        <div class="concept reveal"><span class="term">Do-calculus</span><span class="def">Judea Pearl’s formal rules for reasoning about interventions. The do-operator <span class="mono">do(X = x)</span> models actively setting a variable rather than observing it — the machinery GO-Y embeds into graph query languages.</span></div>
-        <div class="concept reveal"><span class="term">GQL / Cypher</span><span class="def">Declarative property-graph query languages — Cypher pioneered by Neo4j, and GQL the recent ISO international standard. GO-Y extends this family so causal analysis becomes declarative and optimisable.</span></div>
-        <div class="concept reveal"><span class="term">Versioning &amp; provenance</span><span class="def">Tracking how causal models evolve over time — revisions to assumptions, competing hypotheses, and the lineage of causal conclusions — giving causal reasoning the reproducibility guarantees expected of modern data systems.</span></div>
       </div>
     </div>
   </section>
@@ -358,7 +316,6 @@
         <div>
           <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="#vision">Vision</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="people.html">People</a></li>
             <li><a href="publications.html">Publications</a></li>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>People · GO-Y — ERC Advanced Grant</title>
-  <meta name="description" content="The GO-Y team: PI Prof. Angela Bonifati and the researchers building causality-driven graph data management at CNRS LIRIS / Université Claude Bernard Lyon 1." />
+  <meta name="description" content="The GO-Y team: PI Prof. Angela Bonifati and the postdoctoral and doctoral researchers building causality-driven graph data management at CNRS LIRIS / Université Claude Bernard Lyon 1." />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,6 @@
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html#vision">Vision</a></li>
           <li><a href="index.html#research">Research</a></li>
           <li><a href="people.html" class="active">People</a></li>
           <li><a href="publications.html">Publications</a></li>
@@ -39,7 +38,6 @@
     </div>
   </header>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#vision">Vision</a>
     <a href="index.html#research">Research</a>
     <a href="people.html">People</a>
     <a href="publications.html">Publications</a>
@@ -52,35 +50,33 @@
     <div class="container">
       <span class="eyebrow reveal">The team</span>
       <h1 class="reveal">People</h1>
-      <p class="reveal" data-delay="1">GO-Y is led from the Database (BD) group at CNRS LIRIS, Université Claude
+      <p class="reveal" data-delay="1">GO-Y is based in the Database (BD) group at CNRS LIRIS, Université Claude
         Bernard Lyon 1 — bringing together graph data management and causal inference under one roof.</p>
     </div>
   </section>
 
-  <!-- PI FEATURE -->
+  <!-- PRINCIPAL INVESTIGATOR -->
   <section style="padding-top:1rem">
     <div class="container">
-      <div class="card pi-feature reveal" style="padding:2.6rem">
-        <div class="pi-portrait"><span class="monogram">AB</span></div>
-        <div class="pi-meta">
+      <div class="card pi-card reveal" style="padding:2.6rem">
+        <div class="photo">
+          <span class="initials">AB</span>
+          <img src="assets/img/people/angela.jpg" alt="Angela Bonifati" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div>
           <span class="role">Principal Investigator</span>
           <h2>Angela Bonifati</h2>
-          <p class="affil">Distinguished Professor of Computer Science · Université Claude Bernard Lyon 1 · Head of the Database (BD) Group, CNRS LIRIS · Senior Member, Institut Universitaire de France · Adjunct Professor, University of Waterloo</p>
-          <p>Angela Bonifati leads the Database group at CNRS LIRIS and is a Senior Member of the Institut
-            Universitaire de France. Her research spans graph databases, knowledge graphs, data integration,
-            data quality, query processing, and the interplay of data management with machine learning. She
-            co-authored foundational works on property graphs (PG-Schema, PG-Keys) and contributes to the
-            <span class="mono">GQL</span> (ISO/IEC 39075) and SQL/PGQ graph query-language standards.</p>
-          <p style="color:var(--muted);font-size:.95rem">An ACM Fellow (2025) and recipient of the VLDB Women in
-            Database Research Award (2025) and the IEEE TCDE Impact Award (2023). She is Chair of the ACM SIGMOD
-            Executive Committee (2025–2029), a VLDB Endowment Trustee, General Chair of VLDB 2026, and PC Chair of
-            ICDE 2025 and SIGMOD 2022.</p>
+          <p class="affil">Distinguished Professor of Computer Science · Université Claude Bernard Lyon 1 · Head of the Database (BD) Group, CNRS LIRIS · Senior Member, Institut Universitaire de France · ACM Fellow</p>
+          <p>Angela Bonifati leads the Database group at CNRS LIRIS. Her research spans graph databases, knowledge
+            graphs, data integration, data quality and query processing, and she co-authored foundational works on
+            property graphs (PG-Schema, PG-Keys) and the <span class="mono">GQL</span> / SQL/PGQ graph query-language
+            standards. She is Chair of the ACM SIGMOD Executive Committee, a VLDB Endowment Trustee, and General
+            Chair of VLDB 2026.</p>
           <div class="tag-row">
             <span class="tag accent">ACM Fellow</span>
             <span class="tag accent">ERC Advanced Grant</span>
             <span class="tag">IUF Senior Member</span>
             <span class="tag">VLDB WiDR Award ’25</span>
-            <span class="tag">IEEE TCDE Impact ’23</span>
           </div>
           <div class="hero-cta" style="margin-top:1.6rem">
             <a class="btn btn-ghost" href="https://perso.liris.cnrs.fr/angela.bonifati/" target="_blank" rel="noopener">Homepage ↗</a>
@@ -91,76 +87,61 @@
     </div>
   </section>
 
-  <!-- CORE TEAM -->
+  <!-- POSTDOCS -->
   <section style="padding-top:clamp(2.5rem,5vw,4rem)">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">GO-Y team</span>
-        <h2>Researchers</h2>
-        <p>Postdoctoral researchers and doctoral students driving the causal graph database agenda.</p>
+        <h2>Postdoctoral researchers</h2>
       </div>
       <div class="grid grid-3">
-        <article class="card person reveal">
-          <div class="avatar">YZ</div>
+        <a class="card member reveal" href="https://jaylzhou.github.io/" target="_blank" rel="noopener">
+          <div class="photo">
+            <span class="initials">YZ</span>
+            <img src="assets/img/people/yingli.jpg" alt="Yingli Zhou" loading="lazy" onerror="this.remove()" />
+          </div>
           <h3>Yingli Zhou</h3>
-          <span class="p-role">Postdoctoral Researcher</span>
-          <p class="p-focus">GO-Y-funded postdoc working on causality-aware graph data management, scalable graph
-            analytics and reliable graph infrastructure for AI. Ph.D. from CUHK-Shenzhen.</p>
-        </article>
-        <article class="card person reveal" data-delay="1">
-          <div class="avatar">AP</div>
-          <h3>Amedeo Pachera</h3>
-          <span class="p-role">Doctoral Researcher</span>
-          <p class="p-focus">PhD candidate on human-and-AI for data-intensive applications: property-graph data
-            quality &amp; repair and causal “what-if” analysis. Lead author of <em>What If: Causal Analysis with
-            Graph Databases</em> (PVLDB 2025).</p>
-        </article>
-        <article class="card person reveal" data-delay="2">
-          <div class="avatar">MP</div>
-          <h3>Mattia Palmiotto</h3>
-          <span class="p-role">Doctoral Researcher</span>
-          <p class="p-focus">Researcher in the BD group at Lyon 1 / CNRS LIRIS; co-author of the foundational
-            <em>What If: Causal Analysis with Graph Databases</em> (PVLDB 2025) that seeds the GO-Y direction.</p>
-        </article>
+          <span class="m-role">Postdoctoral Researcher</span>
+          <p class="m-bio">Causality-aware graph data management, scalable graph analytics and graph-based
+            retrieval. Ph.D. from CUHK-Shenzhen.</p>
+          <span class="m-link">Homepage ↗</span>
+        </a>
+
+        <a class="card member reveal" data-delay="1" href="https://sites.google.com/view/dazhuo-qiu/home" target="_blank" rel="noopener">
+          <div class="photo">
+            <span class="initials">DQ</span>
+            <img src="assets/img/people/dazhuo.jpg" alt="Dazhuo Qiu" loading="lazy" onerror="this.remove()" />
+          </div>
+          <h3>Dazhuo Qiu</h3>
+          <span class="m-role">Postdoctoral Researcher</span>
+          <p class="m-bio">Explainability for graph neural networks and causality-driven graph databases —
+            “why” and “what-if” questions over graph data.</p>
+          <span class="m-link">Homepage ↗</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- COLLABORATORS -->
+  <!-- PHD STUDENTS -->
   <section style="padding-top:1rem">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Collaborators</span>
-        <h2>Faculty &amp; close collaborators</h2>
-        <p>Colleagues in the LIRIS Database team who shape and support the GO-Y line of research.</p>
+        <span class="eyebrow">GO-Y team</span>
+        <h2>Doctoral researchers</h2>
       </div>
       <div class="grid grid-3">
-        <article class="card person reveal">
-          <div class="avatar">AM</div>
-          <h3>Andrea Mauri</h3>
-          <span class="p-role">Junior Professor · LIRIS BD</span>
-          <p class="p-focus">Works on human-in-the-loop data-intensive applications, property-graph data quality
-            and LLMs for graph consistency; co-supervisor and co-author with Bonifati on causal graph analysis.</p>
-        </article>
-        <article class="card person reveal" data-delay="1">
-          <div class="avatar">CZ</div>
-          <h3>Chao Zhang</h3>
-          <span class="p-role">Junior Professor Chair · LIRIS BD</span>
-          <p class="p-focus">Chair in Generative AI &amp; Heterogeneous Data at Lyon 1; former postdoc with Bonifati.
-            Works on query processing over heterogeneous data, graph reachability and streaming connectivity.</p>
-        </article>
-        <article class="card person reveal" data-delay="2">
-          <div class="avatar">VS</div>
-          <h3>Vasile-Marian Scuturici</h3>
-          <span class="p-role">Faculty · LIRIS BD</span>
-          <p class="p-focus">Assistant coordinator of the LIRIS Database (BD) team that hosts GO-Y, supporting the
-            group’s data-management research across projects.</p>
-        </article>
+        <div class="card member reveal">
+          <div class="photo">
+            <span class="initials">HW</span>
+            <img src="assets/img/people/huizhong.jpg" alt="Huizhong Wang" loading="lazy" onerror="this.remove()" />
+          </div>
+          <h3>Huizhong Wang</h3>
+          <span class="m-role">PhD Student</span>
+          <p class="m-bio">Doctoral researcher on GO-Y, working on causal property graphs and causal graph
+            querying.</p>
+          <span class="m-link disabled">Homepage soon</span>
+        </div>
       </div>
-      <p class="reveal" style="color:var(--muted);font-size:.92rem;margin-top:1.6rem">
-        GO-Y is hosted within the wider <a href="https://liris.cnrs.fr/en/team/bd" target="_blank" rel="noopener" style="color:var(--accent)">LIRIS Database (BD) team ↗</a>,
-        and collaborates with the international graph-data and causality communities (LDBC / Graph Data Council, GRADES-NDA, and beyond).
-      </p>
     </div>
   </section>
 
@@ -196,8 +177,7 @@
         </div>
       </div>
       <p class="reveal" style="color:var(--muted);font-size:.88rem;margin-top:1.4rem">
-        Positions are advertised on the project page; titles and details may be refined. Please write to the PI
-        with a CV and a short statement of interest.
+        Please write to the PI with a CV and a short statement of interest.
       </p>
     </div>
   </section>
@@ -221,7 +201,6 @@
         <div>
           <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="index.html#vision">Vision</a></li>
             <li><a href="index.html#research">Research</a></li>
             <li><a href="people.html">People</a></li>
             <li><a href="publications.html">Publications</a></li>
