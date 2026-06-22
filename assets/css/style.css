@@ -395,6 +395,12 @@ a.member:hover .m-link { text-decoration: underline; }
   .pi-card .tag-row, .pi-card .hero-cta { justify-content: center; }
 }
 
+/* ---------- Objectives figure ---------- */
+.wp-figure { margin-top: 1.2rem; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .4rem; }
+.wp-figure svg { min-width: 760px; display: block; }
+.wp-legend { display: flex; gap: 1.8rem; justify-content: center; flex-wrap: wrap; margin-top: 1.3rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); letter-spacing: .03em; }
+.wp-legend b { color: var(--accent); font-weight: 700; margin-right: .35em; }
+
 /* ---------- Publications ---------- */
 .pub-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.4rem; }
 .filter-btn { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; padding: 0.55em 1.1em; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-soft); cursor: pointer; transition: all .2s; }
