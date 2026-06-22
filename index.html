@@ -201,169 +201,200 @@
       </div>
 
       <div class="wp-figure reveal">
-        <svg viewBox="0 0 1300 660" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="goyTitle goyDesc" font-family="var(--font-sans)">
-<title id="goyTitle">GO-Y: six scientific objectives as a phased causal pipeline</title>
-<desc id="goyDesc">Two foundation objectives feed a causal-graph extraction stage, which feeds an integration core and a temporality objective; all converge into a unified causal graph database.</desc>
-<defs>
-<linearGradient id="goyCard" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="var(--bg-3)"/>
-<stop offset="1" stop-color="var(--surface-2)"/>
-</linearGradient>
-<linearGradient id="goyBandA" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#5b8cff" stop-opacity="0.10"/>
-<stop offset="1" stop-color="#5b8cff" stop-opacity="0.02"/>
-</linearGradient>
-<linearGradient id="goyBandB" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#9d7bff" stop-opacity="0.11"/>
-<stop offset="1" stop-color="#9d7bff" stop-opacity="0.02"/>
-</linearGradient>
-<linearGradient id="goyChipBlue" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#6ea0ff"/><stop offset="1" stop-color="#3f6dff"/>
-</linearGradient>
-<linearGradient id="goyChipTeal" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#52ecd6"/><stop offset="1" stop-color="#16b9a3"/>
-</linearGradient>
-<linearGradient id="goyChipViolet" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#b69bff"/><stop offset="1" stop-color="#7d56ff"/>
-</linearGradient>
-<linearGradient id="goyChipGold" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#f7d488"/><stop offset="1" stop-color="#e9a93c"/>
-</linearGradient>
-<radialGradient id="goyOrb" cx="0.5" cy="0.42" r="0.75">
-<stop offset="0" stop-color="#f4c25a" stop-opacity="0.95"/>
-<stop offset="0.45" stop-color="#f4a83a" stop-opacity="0.55"/>
-<stop offset="1" stop-color="#f4a83a" stop-opacity="0"/>
-</radialGradient>
-<filter id="goySoft" x="-30%" y="-30%" width="160%" height="160%">
-<feDropShadow dx="0" dy="6" stdDeviation="11" flood-color="#1a2240" flood-opacity="0.16"/>
-</filter>
-<filter id="goyGlow" x="-80%" y="-80%" width="260%" height="260%">
-<feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-</filter>
-<marker id="goyArr" markerWidth="9" markerHeight="9" refX="6.4" refY="3.1" orient="auto"><path d="M0,0 L6.6,3.1 L0,6.2 Z" style="fill:#5b8cff"/></marker>
-<marker id="goyArrV" markerWidth="9" markerHeight="9" refX="6.4" refY="3.1" orient="auto"><path d="M0,0 L6.6,3.1 L0,6.2 Z" style="fill:#9d7bff"/></marker>
-<marker id="goyArrT" markerWidth="9" markerHeight="9" refX="6.4" refY="3.1" orient="auto"><path d="M0,0 L6.6,3.1 L0,6.2 Z" style="fill:#2fe0c8"/></marker>
-<style>
-.goy-title{font-family:var(--font-display);font-size:16px;font-weight:600;fill:var(--text)}
-.goy-sub{font-family:var(--font-mono);font-size:11.5px;fill:var(--muted);letter-spacing:.2px}
-.goy-num{font-family:var(--font-display);font-size:19px;font-weight:700;fill:#fff}
-.goy-band-lbl{font-family:var(--font-mono);font-size:12px;fill:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
-.goy-edge{fill:none;stroke-linecap:round}
-.goy-orb-lbl{font-family:var(--font-display);font-size:18px;font-weight:700;fill:var(--text)}
-.goy-orb-sub{font-family:var(--font-mono);font-size:11px;fill:var(--muted)}
-.goy-ico{fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-@media (prefers-reduced-motion: no-preference){
- .goy-pulse{animation:goyP 5.5s ease-in-out infinite}
- @keyframes goyP{0%,100%{opacity:.55}50%{opacity:1}}
- .goy-flow{stroke-dasharray:4 10;animation:goyF 2.6s linear infinite}
- @keyframes goyF{to{stroke-dashoffset:-28}}
-}
-</style>
-</defs>
+        <svg viewBox="0 0 1200 720" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Causal constellation of the six scientific objectives of GO-Y">
+  <style>
+    .figroot { font-family: var(--font-sans); }
+    .otitle { font-family: var(--font-display); fill: var(--text); font-size: 17px; font-weight: 600; }
+    .otitle-sm { font-family: var(--font-display); fill: var(--text); font-size: 14.5px; font-weight: 600; }
+    .meta { font-family: var(--font-mono); fill: var(--muted); font-size: 11px; letter-spacing: 0.02em; }
+    .meta-strong { font-family: var(--font-mono); fill: var(--text); font-size: 11px; letter-spacing: 0.02em; }
+    .nodenum { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+    .legend { font-family: var(--font-mono); fill: var(--muted); font-size: 11px; }
+    .nodecard { fill: var(--bg-3); stroke: var(--border); }
+    .edge { fill: none; stroke-linecap: round; }
 
-<!-- phase bands -->
-<rect x="36" y="96" width="520" height="470" rx="26" fill="url(#goyBandA)"/>
-<rect x="572" y="96" width="430" height="470" rx="26" fill="url(#goyBandB)"/>
-<text x="58" y="132" class="goy-band-lbl">Foundations · Y1–Y3</text>
-<text x="594" y="132" class="goy-band-lbl">Construction · Y3–Y5</text>
-<text x="1052" y="132" class="goy-band-lbl">Culmination</text>
+    @media (prefers-reduced-motion: no-preference) {
+      .pulse { animation: pulse 5.5s ease-in-out infinite; transform-origin: center; }
+      .pulse2 { animation: pulse 6.5s ease-in-out infinite; transform-origin: center; }
+      .flow { stroke-dasharray: 5 9; animation: flow 4s linear infinite; }
+      @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: .95; } }
+      @keyframes flow { to { stroke-dashoffset: -28; } }
+    }
+  </style>
 
-<!-- ===== connectors (drawn under cards) ===== -->
-<!-- 1<->2 -->
-<path class="goy-edge" d="M296,232 C336,232 336,360 296,360" stroke="#9d7bff" stroke-width="2" marker-end="url(#goyArrV)" marker-start="url(#goyArrV)" opacity=".75"/>
-<!-- 1->3 -->
-<path class="goy-edge" d="M296,206 C440,180 470,300 560,338" stroke="#5b8cff" stroke-width="2" marker-end="url(#goyArr)" opacity=".8"/>
-<!-- 2->3 -->
-<path class="goy-edge" d="M296,386 C420,420 470,392 560,360" stroke="#5b8cff" stroke-width="2" marker-end="url(#goyArr)" opacity=".8"/>
-<!-- 3->4 -->
-<path class="goy-edge" d="M772,348 C812,348 812,238 852,238" stroke="#5b8cff" stroke-width="2" marker-end="url(#goyArr)" opacity=".85"/>
-<!-- 3->5 -->
-<path class="goy-edge" d="M772,360 C812,360 812,470 852,470" stroke="#5b8cff" stroke-width="2" marker-end="url(#goyArr)" opacity=".85"/>
-<!-- 4->5 -->
-<path class="goy-edge" d="M922,300 C922,360 922,360 922,408" stroke="#5b8cff" stroke-width="2" marker-end="url(#goyArr)" opacity=".8"/>
-<!-- 2<->5 -->
-<path class="goy-edge" d="M232,420 C200,560 760,580 852,500" stroke="#2fe0c8" stroke-width="2" marker-end="url(#goyArrT)" marker-start="url(#goyArrT)" opacity=".7"/>
-<!-- 4 .. 6 dotted -->
-<path class="goy-edge goy-flow" d="M992,238 C1070,238 1086,330 1120,366" stroke="#f4c25a" stroke-width="2.4" stroke-dasharray="4 10" opacity=".95"/>
-<!-- convergence whispers into orb -->
-<path class="goy-edge" d="M992,470 C1050,470 1078,420 1118,392" stroke="#f4c25a" stroke-width="1.6" opacity=".4"/>
+  <defs>
+    <radialGradient id="glowGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f4c25a" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#f4c25a" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#f4c25a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5b8cff" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#5b8cff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#5b8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowSoft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9d7bff" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#9d7bff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#9d7bff" stop-opacity="0"/>
+    </radialGradient>
 
-<!-- ============ CARDS ============ -->
-<!-- card builder pattern repeated -->
+    <linearGradient id="ringBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b8cff"/>
+      <stop offset="100%" stop-color="#2fe0c8"/>
+    </linearGradient>
+    <linearGradient id="ringGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4c25a"/>
+      <stop offset="100%" stop-color="#f0a93c"/>
+    </linearGradient>
+    <linearGradient id="ringHub" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b8cff"/>
+      <stop offset="50%" stop-color="#9d7bff"/>
+      <stop offset="100%" stop-color="#2fe0c8"/>
+    </linearGradient>
 
-<!-- 1 -->
-<g filter="url(#goySoft)">
-<rect x="96" y="176" width="200" height="112" rx="16" fill="url(#goyCard)" stroke="var(--border)"/>
-<rect x="96" y="176" width="4.5" height="112" rx="2" fill="#5b8cff"/>
-</g>
-<circle cx="130" cy="208" r="17" fill="url(#goyChipBlue)"/><text x="130" y="214.5" text-anchor="middle" class="goy-num">1</text>
-<g class="goy-ico" stroke="#5b8cff" transform="translate(258,198)"><rect x="0" y="0" width="16" height="6" rx="2"/><rect x="0" y="9" width="16" height="6" rx="2"/></g>
-<text x="116" y="248" class="goy-title">Data Modelling &amp;</text>
-<text x="116" y="266" class="goy-title">Query Languages</text>
-<text x="116" y="283" class="goy-sub">1 PhD · Y1–Y3 · Cypher / GQL</text>
+    <radialGradient id="coreGold" cx="38%" cy="32%" r="75%">
+      <stop offset="0%" stop-color="#fbe2a6"/>
+      <stop offset="55%" stop-color="#f4c25a"/>
+      <stop offset="100%" stop-color="#e09a2e"/>
+    </radialGradient>
+    <radialGradient id="coreHub" cx="38%" cy="32%" r="80%">
+      <stop offset="0%" stop-color="#bcd0ff"/>
+      <stop offset="50%" stop-color="#5b8cff"/>
+      <stop offset="100%" stop-color="#3457c9"/>
+    </radialGradient>
 
-<!-- 2 -->
-<g filter="url(#goySoft)">
-<rect x="96" y="330" width="200" height="112" rx="16" fill="url(#goyCard)" stroke="var(--border)"/>
-<rect x="96" y="330" width="4.5" height="112" rx="2" fill="#9d7bff"/>
-</g>
-<circle cx="130" cy="362" r="17" fill="url(#goyChipViolet)"/><text x="130" y="368.5" text-anchor="middle" class="goy-num">2</text>
-<g class="goy-ico" stroke="#9d7bff" transform="translate(256,352)"><circle cx="4" cy="4" r="3"/><circle cx="14" cy="4" r="3"/><circle cx="9" cy="13" r="3"/><path d="M4,7 L9,10 M14,7 L9,10"/></g>
-<text x="116" y="402" class="goy-title">Property Graph</text>
-<text x="116" y="420" class="goy-title">Causality Theory</text>
-<text x="116" y="437" class="goy-sub">1 postdoc · Y1–Y3 · d-separation</text>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0a1330" flood-opacity="0.18"/>
+    </filter>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
 
-<!-- 3 (bridge) -->
-<g filter="url(#goySoft)">
-<rect x="572" y="296" width="200" height="112" rx="16" fill="url(#goyCard)" stroke="var(--border)"/>
-<rect x="572" y="296" width="4.5" height="112" rx="2" fill="#2fe0c8"/>
-</g>
-<circle cx="606" cy="328" r="17" fill="url(#goyChipTeal)"/><text x="606" y="334.5" text-anchor="middle" class="goy-num">3</text>
-<g class="goy-ico" stroke="#2fe0c8" transform="translate(732,318)"><path d="M1,8 C5,2 11,14 15,8"/><circle cx="1" cy="8" r="1.6"/><circle cx="15" cy="8" r="1.6"/></g>
-<text x="592" y="368" class="goy-title">Causal Graph</text>
-<text x="592" y="386" class="goy-title">Extraction from Data</text>
-<text x="592" y="403" class="goy-sub">1 PhD · Y3–Y5 · the bridge</text>
+    <marker id="arrB" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" style="fill:#5b8cff"/>
+    </marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" style="fill:#2fe0c8"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" style="fill:#f4c25a"/>
+    </marker>
+  </defs>
 
-<!-- 4 CAUSAL CORE (emphasised) -->
-<g filter="url(#goySoft)">
-<rect x="848" y="170" width="208" height="124" rx="18" fill="url(#goyCard)" stroke="#5b8cff" stroke-width="1.6"/>
-<rect x="848" y="170" width="208" height="124" rx="18" fill="none" stroke="#5b8cff" stroke-width="3" opacity=".18"/>
-</g>
-<rect x="930" y="160" width="92" height="20" rx="10" fill="url(#goyChipBlue)"/><text x="976" y="174" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="#fff" letter-spacing="1">CAUSAL CORE</text>
-<circle cx="884" cy="206" r="18" fill="url(#goyChipBlue)"/><text x="884" y="212.5" text-anchor="middle" class="goy-num">4</text>
-<g class="goy-ico" stroke="#5b8cff" stroke-width="1.8" transform="translate(1018,196)"><circle cx="9" cy="9" r="9" opacity=".5"/><path d="M9,3 L9,15 M3,9 L15,9"/></g>
-<text x="870" y="248" class="goy-title">Causal Property</text>
-<text x="870" y="267" class="goy-title">Graph Integration</text>
-<text x="870" y="285" class="goy-sub">1 PhD, 1 postdoc · Y3–Y5</text>
+  <g class="figroot">
 
-<!-- 5 -->
-<g filter="url(#goySoft)">
-<rect x="848" y="412" width="208" height="116" rx="16" fill="url(#goyCard)" stroke="var(--border)"/>
-<rect x="848" y="412" width="4.5" height="116" rx="2" fill="#9d7bff"/>
-</g>
-<circle cx="882" cy="444" r="17" fill="url(#goyChipViolet)"/><text x="882" y="450.5" text-anchor="middle" class="goy-num">5</text>
-<g class="goy-ico" stroke="#9d7bff" transform="translate(1010,434)"><circle cx="8" cy="8" r="7"/><path d="M8,4 L8,8 L11,10"/></g>
-<text x="868" y="484" class="goy-title">Causal Graph Temporality</text>
-<text x="868" y="502" class="goy-title">&amp; Evolution</text>
-<text x="868" y="519" class="goy-sub">1 PhD, 1 postdoc · Y1–Y5</text>
+    <!-- atmospheric background glows -->
+    <circle class="pulse2" cx="640" cy="540" r="260" fill="url(#glowBlue)"/>
+    <circle class="pulse" cx="600" cy="300" r="220" fill="url(#glowGold)"/>
+    <circle cx="250" cy="180" r="200" fill="url(#glowSoft)"/>
+    <circle cx="980" cy="200" r="200" fill="url(#glowSoft)"/>
 
-<!-- 6 DATABASE ORB / culmination -->
-<circle cx="1165" cy="378" r="78" fill="url(#goyOrb)" class="goy-pulse" filter="url(#goyGlow)"/>
-<g filter="url(#goySoft)">
-<circle cx="1165" cy="378" r="50" fill="url(#goyCard)" stroke="#f4c25a" stroke-width="2"/>
-</g>
-<g class="goy-ico" stroke="#f4c25a" stroke-width="2" transform="translate(1151,356)"><ellipse cx="14" cy="4" rx="14" ry="5"/><path d="M0,4 V20 C0,23 28,23 28,20 V4"/><path d="M0,12 C0,15 28,15 28,12"/></g>
-<circle cx="1197" cy="346" r="11" fill="url(#goyChipGold)"/><text x="1197" y="350.5" text-anchor="middle" font-family="var(--font-display)" font-size="13" font-weight="700" fill="#3a2a06">6</text>
-<text x="1165" y="486" text-anchor="middle" class="goy-orb-lbl">A Causal Graph</text>
-<text x="1165" y="508" text-anchor="middle" class="goy-orb-lbl">Database</text>
-<text x="1165" y="529" text-anchor="middle" class="goy-orb-sub">All · 1 eng. · Y1–Y5</text>
+    <!-- faint orbital ring guiding the eye toward the hub -->
+    <ellipse cx="640" cy="430" rx="500" ry="280" fill="none" stroke="var(--border)" stroke-opacity="0.45" stroke-width="1"/>
+
+    <!-- ============ EDGES (drawn under nodes) ============ -->
+    <!-- 1 <-> 2 : foundations inform each other (blue, double arrow) -->
+    <path class="edge" d="M 250 170 C 360 150, 470 150, 560 175" stroke="#5b8cff" stroke-width="2" stroke-opacity="0.7" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+
+    <!-- 1 -> 3 -->
+    <path class="edge" d="M 215 215 C 175 320, 195 410, 285 470" stroke="#5b8cff" stroke-width="2" stroke-opacity="0.6" marker-end="url(#arrB)"/>
+    <!-- 2 -> 3 -->
+    <path class="edge" d="M 575 215 C 520 330, 440 410, 370 460" stroke="#5b8cff" stroke-width="2" stroke-opacity="0.6" marker-end="url(#arrB)"/>
+
+    <!-- 3 -> 4 (into the gold core) -->
+    <path class="edge" d="M 380 510 C 480 540, 540 530, 588 470" stroke="#f4c25a" stroke-width="2.4" stroke-opacity="0.85" marker-end="url(#arrG)"/>
+    <!-- 3 -> 5 -->
+    <path class="edge" d="M 360 555 C 480 640, 700 660, 880 600" stroke="#5b8cff" stroke-width="2" stroke-opacity="0.55" marker-end="url(#arrB)"/>
+
+    <!-- 4 -> 5 -->
+    <path class="edge" d="M 660 455 C 760 510, 820 540, 885 560" stroke="#f4c25a" stroke-width="2.2" stroke-opacity="0.7" marker-end="url(#arrG)"/>
+
+    <!-- 2 <-> 5 (teal, double arrow) -->
+    <path class="edge" d="M 645 215 C 800 300, 900 430, 920 545" stroke="#2fe0c8" stroke-width="2" stroke-opacity="0.65" marker-start="url(#arrT)" marker-end="url(#arrT)"/>
+
+    <!-- 4 ... 6 dotted link into the hub -->
+    <path class="edge flow" d="M 650 415 C 760 400, 850 380, 905 350" stroke="#9d7bff" stroke-width="2.4" stroke-opacity="0.9"/>
+
+    <!-- ============ NODE 1 — Data Modelling -->
+    <g filter="url(#soft)">
+      <circle cx="215" cy="170" r="42" class="nodecard"/>
+      <circle cx="215" cy="170" r="42" fill="none" stroke="url(#ringBlue)" stroke-width="2.2"/>
+      <text x="215" y="178" text-anchor="middle" class="nodenum" fill="#5b8cff">1</text>
+    </g>
+    <text x="215" y="240" text-anchor="middle" class="otitle-sm">Data Modelling &amp;</text>
+    <text x="215" y="259" text-anchor="middle" class="otitle-sm">Query Languages</text>
+    <text x="215" y="278" text-anchor="middle" class="meta">1 PhD · Y1–Y3</text>
+    <text x="215" y="293" text-anchor="middle" class="meta">Cypher / GQL</text>
+
+    <!-- ============ NODE 2 — Causality Theory -->
+    <g filter="url(#soft)">
+      <circle cx="610" cy="170" r="42" class="nodecard"/>
+      <circle cx="610" cy="170" r="42" fill="none" stroke="url(#ringBlue)" stroke-width="2.2"/>
+      <text x="610" y="178" text-anchor="middle" class="nodenum" fill="#5b8cff">2</text>
+    </g>
+    <text x="610" y="100" text-anchor="middle" class="otitle-sm">Property Graph</text>
+    <text x="610" y="119" text-anchor="middle" class="otitle-sm">Causality Theory</text>
+    <text x="610" y="138" text-anchor="middle" class="meta">1 postdoc · Y1–Y3 · d-separation</text>
+
+    <!-- ============ NODE 3 — Extraction (the bridge) -->
+    <g filter="url(#soft)">
+      <circle cx="320" cy="513" r="42" class="nodecard"/>
+      <circle cx="320" cy="513" r="42" fill="none" stroke="url(#ringBlue)" stroke-width="2.2"/>
+      <text x="320" y="521" text-anchor="middle" class="nodenum" fill="#5b8cff">3</text>
+    </g>
+    <text x="320" y="583" text-anchor="middle" class="otitle-sm">Causal Graph</text>
+    <text x="320" y="602" text-anchor="middle" class="otitle-sm">Extraction from Data</text>
+    <text x="320" y="621" text-anchor="middle" class="meta">1 PhD · Y3–Y5 · the bridge</text>
+
+    <!-- ============ NODE 4 — Causal Core (GOLD, emphasised) -->
+    <circle cx="620" cy="415" r="92" fill="url(#glowGold)" class="pulse"/>
+    <g filter="url(#soft)">
+      <circle cx="620" cy="415" r="58" fill="url(#coreGold)"/>
+      <circle cx="620" cy="415" r="58" fill="none" stroke="url(#ringGold)" stroke-width="2.6"/>
+      <text x="620" y="402" text-anchor="middle" class="nodenum" fill="#3a2a06" font-size="24">4</text>
+      <text x="620" y="425" text-anchor="middle" style="font-family:var(--font-mono);fill:#4a3408;font-size:9px;letter-spacing:0.12em">CAUSAL CORE</text>
+    </g>
+    <text x="620" y="503" text-anchor="middle" class="otitle">Causal Property Graph Integration</text>
+    <text x="620" y="524" text-anchor="middle" class="meta-strong">1 PhD, 1 postdoc · Y3–Y5</text>
+
+    <!-- ============ NODE 5 — Temporality -->
+    <g filter="url(#soft)">
+      <circle cx="920" cy="580" r="42" class="nodecard"/>
+      <circle cx="920" cy="580" r="42" fill="none" stroke="url(#ringBlue)" stroke-width="2.2"/>
+      <text x="920" y="588" text-anchor="middle" class="nodenum" fill="#2fe0c8">5</text>
+    </g>
+    <text x="920" y="650" text-anchor="middle" class="otitle-sm">Causal Graph</text>
+    <text x="920" y="669" text-anchor="middle" class="otitle-sm">Temporality &amp; Evolution</text>
+    <text x="920" y="688" text-anchor="middle" class="meta">1 PhD, 1 postdoc · Y1–Y5</text>
+
+    <!-- ============ NODE 6 — The Database (radiant hub, emphasised) -->
+    <circle cx="970" cy="320" r="100" fill="url(#glowBlue)" class="pulse2"/>
+    <g filter="url(#soft)">
+      <circle cx="970" cy="320" r="64" fill="url(#coreHub)"/>
+      <circle cx="970" cy="320" r="64" fill="none" stroke="url(#ringHub)" stroke-width="2.8"/>
+      <!-- subtle database line-icon -->
+      <g stroke="#dfe9ff" stroke-width="1.6" fill="none" opacity="0.9" transform="translate(970,290)">
+        <ellipse cx="0" cy="0" rx="15" ry="5"/>
+        <path d="M -15 0 L -15 14 C -15 17, 15 17, 15 14 L 15 0"/>
+        <path d="M -15 8 C -15 11, 15 11, 15 8"/>
+      </g>
+      <text x="970" y="335" text-anchor="middle" class="nodenum" fill="#eaf1ff" font-size="22">6</text>
+    </g>
+    <text x="970" y="412" text-anchor="middle" class="otitle">A Causal Graph Database</text>
+    <text x="970" y="433" text-anchor="middle" class="meta-strong">All · 1 eng. · Y1–Y5 · culmination</text>
+
+    <!-- ============ LEGEND ============ -->
+    <g transform="translate(70,648)">
+      <line x1="0" y1="0" x2="34" y2="0" stroke="#5b8cff" stroke-width="2" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+      <text x="42" y="4" class="legend">informs</text>
+      <line x1="120" y1="0" x2="154" y2="0" stroke="#5b8cff" stroke-width="2" marker-end="url(#arrB)"/>
+      <text x="162" y="4" class="legend">feeds</text>
+      <line x1="218" y1="0" x2="252" y2="0" stroke="#9d7bff" stroke-width="2.4" stroke-dasharray="5 6"/>
+      <text x="260" y="4" class="legend">brings together</text>
+    </g>
+  </g>
 </svg>
-      </div>
-
-      <div class="wp-legend reveal">
-        <span><b>&#8594;</b> feeds into</span>
-        <span><b>&#8596;</b> informs</span>
-        <span><b>&#8943;</b> links to</span>
       </div>
     </div>
   </section>
