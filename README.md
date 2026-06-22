@@ -6,6 +6,8 @@ CNRS LIRIS / Université Claude Bernard Lyon 1.
 
 A fast, dependency-free **static site** — just HTML, CSS and vanilla JS. No build step, no framework.
 
+🌐 **Live:** https://jaylzhou.github.io/ercgoy/ · **Repo:** https://github.com/JayLZhou/ercgoy
+
 ## Pages
 
 | File | Purpose |
@@ -44,8 +46,18 @@ Then open the printed URL (e.g. http://localhost:8080). You can also just open `
 
 ## Deploy
 
-Drop the folder on any static host — the LIRIS web server, GitHub Pages, Netlify, Vercel, etc.
-No configuration required.
+This repo is published with **GitHub Pages** (Settings → Pages → *Deploy from a branch* → `main` / root).
+A `.nojekyll` file is included so the `assets/` folder is served verbatim. Every push to `main`
+re-deploys automatically; the live site is at https://jaylzhou.github.io/ercgoy/.
+
+To update the site:
+
+```bash
+git add -A && git commit -m "Update site" && git push
+```
+
+It also works on any other static host (the LIRIS web server, Netlify, Vercel, etc.) — no
+configuration required. All internal links are relative, so it runs from a subpath or a domain root.
 
 ## Customising
 
