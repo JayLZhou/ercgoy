@@ -112,35 +112,75 @@
         <div class="reveal" data-delay="1">
           <!-- Bridge diagram -->
           <div class="card" style="padding:2.2rem">
-            <svg viewBox="0 0 360 360" width="100%" role="img" aria-label="Graph databases and causal models unify into causal property graphs">
+            <svg viewBox="0 0 460 430" width="100%" role="img" aria-label="Graph databases joined with causal DAGs to form a causal property graph">
               <defs>
-                <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#9d7bff"/></linearGradient>
-                <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
-                <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#f4c25a"/></marker>
+                <linearGradient id="gGraph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#9d7bff"/></linearGradient>
+                <linearGradient id="gCpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
+                <linearGradient id="gFlowL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#2fe0c8"/></linearGradient>
+                <linearGradient id="gFlowR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4c25a"/><stop offset="1" stop-color="#2fe0c8"/></linearGradient>
+                <radialGradient id="orbL"><stop offset="0" stop-color="#5b8cff" stop-opacity=".26"/><stop offset="1" stop-color="#5b8cff" stop-opacity="0"/></radialGradient>
+                <radialGradient id="orbR"><stop offset="0" stop-color="#f4c25a" stop-opacity=".26"/><stop offset="1" stop-color="#f4c25a" stop-opacity="0"/></radialGradient>
+                <radialGradient id="hGold"><stop offset="0" stop-color="#f4c25a" stop-opacity=".55"/><stop offset="1" stop-color="#f4c25a" stop-opacity="0"/></radialGradient>
+                <radialGradient id="hCpg"><stop offset="0" stop-color="#2fe0c8" stop-opacity=".5"/><stop offset="1" stop-color="#2fe0c8" stop-opacity="0"/></radialGradient>
+                <marker id="ah2" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8 z" fill="#f4c25a"/></marker>
+                <style>
+                  .lbl{ fill:var(--muted); font-family:var(--font-mono); font-size:11px; letter-spacing:.14em }
+                  .lblA{ fill:var(--accent-2); font-family:var(--font-mono); font-size:11px; letter-spacing:.14em }
+                  .fe{ stroke:var(--border-strong) }
+                  .flow{ stroke-dasharray:6 10; animation:goyflow 1.6s linear infinite }
+                  .ring{ animation:goyspin 60s linear infinite; transform-box:fill-box; transform-origin:center }
+                  .pulse{ animation:goypulse 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center }
+                  @keyframes goyflow{ to{ stroke-dashoffset:-32 } }
+                  @keyframes goyspin{ to{ transform:rotate(360deg) } }
+                  @keyframes goypulse{ 0%,100%{ opacity:.4 } 50%{ opacity:.85 } }
+                  @media (prefers-reduced-motion: reduce){ .flow,.ring,.pulse{ animation:none } }
+                </style>
               </defs>
-              <circle cx="78" cy="70" r="40" fill="url(#bg1)" opacity="0.10"/>
-              <text x="78" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">GRAPH DB</text>
-              <g stroke="#5b8cff" stroke-width="1.6" opacity="0.55"><line x1="60" y1="58" x2="96" y2="58"/><line x1="60" y1="58" x2="78" y2="88"/><line x1="96" y1="58" x2="78" y2="88"/></g>
-              <circle cx="60" cy="58" r="6" fill="#5b8cff"/><circle cx="96" cy="58" r="6" fill="#5b8cff"/><circle cx="78" cy="88" r="6" fill="#5b8cff"/>
-              <circle cx="282" cy="70" r="40" fill="url(#bg2)" opacity="0.10"/>
-              <text x="282" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">CAUSAL DAG</text>
-              <g stroke="#f4c25a" stroke-width="1.8" marker-end="url(#ah)" fill="none" opacity="0.8"><line x1="266" y1="52" x2="252" y2="86"/><line x1="298" y1="52" x2="312" y2="86"/><line x1="258" y1="92" x2="306" y2="92"/></g>
-              <circle cx="266" cy="50" r="6" fill="#f4c25a"/><circle cx="298" cy="50" r="6" fill="#f4c25a"/><circle cx="252" cy="92" r="6" fill="#f4c25a"/><circle cx="312" cy="92" r="6" fill="#f4c25a"/>
-              <path d="M95 110 Q150 165 175 195" stroke="#5b8cff" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
-              <path d="M265 110 Q210 165 185 195" stroke="#2fe0c8" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
-              <text x="180" y="318" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#2fe0c8">CAUSAL PROPERTY GRAPH</text>
-              <g stroke="#cbd6ff" stroke-width="1.4" opacity="0.35" fill="none">
-                <line x1="180" y1="215" x2="130" y2="255"/><line x1="180" y1="215" x2="230" y2="255"/>
-                <line x1="130" y1="255" x2="180" y2="290"/><line x1="230" y1="255" x2="180" y2="290"/>
-                <line x1="130" y1="255" x2="230" y2="255"/>
+
+              <!-- depth rings behind the unified graph -->
+              <circle cx="230" cy="332" r="96" fill="none" stroke="var(--border)" opacity=".6"/>
+              <circle cx="230" cy="332" r="118" fill="none" stroke="var(--border-strong)" stroke-dasharray="2 9" opacity=".7" class="ring"/>
+
+              <!-- merge flows -->
+              <path d="M120 184 C 152 244 194 252 228 266" fill="none" stroke="url(#gFlowL)" stroke-width="2.4" stroke-linecap="round" opacity=".9" class="flow"/>
+              <path d="M340 184 C 308 244 266 252 232 266" fill="none" stroke="url(#gFlowR)" stroke-width="2.4" stroke-linecap="round" opacity=".9" class="flow"/>
+
+              <!-- GRAPH DB orb -->
+              <circle cx="120" cy="122" r="62" fill="url(#orbL)"/>
+              <circle cx="120" cy="122" r="60" fill="none" stroke="url(#gGraph)" stroke-width="1.1" opacity=".5"/>
+              <text x="120" y="44" text-anchor="middle" class="lbl">GRAPH DB</text>
+              <g stroke="#5b8cff" stroke-width="1.6" opacity=".6"><line x1="100" y1="106" x2="148" y2="112"/><line x1="100" y1="106" x2="118" y2="152"/><line x1="148" y1="112" x2="118" y2="152"/></g>
+              <circle cx="100" cy="106" r="6" fill="url(#gGraph)"/><circle cx="148" cy="112" r="6" fill="url(#gGraph)"/><circle cx="118" cy="152" r="6" fill="url(#gGraph)"/>
+
+              <!-- CAUSAL DAG orb -->
+              <circle cx="340" cy="122" r="62" fill="url(#orbR)"/>
+              <circle cx="340" cy="122" r="60" fill="none" stroke="#f4c25a" stroke-width="1.1" opacity=".45"/>
+              <text x="340" y="44" text-anchor="middle" class="lbl">CAUSAL DAG</text>
+              <g stroke="#f4c25a" stroke-width="1.8" fill="none" marker-end="url(#ah2)" opacity=".85"><line x1="322" y1="106" x2="338" y2="145"/><line x1="366" y1="110" x2="346" y2="147"/><line x1="324" y1="103" x2="361" y2="108"/></g>
+              <circle cx="320" cy="102" r="6" fill="#f4c25a"/><circle cx="366" cy="108" r="6" fill="#f4c25a"/><circle cx="342" cy="152" r="6" fill="#f4c25a"/>
+
+              <!-- CAUSAL PROPERTY GRAPH (unified) -->
+              <g class="fe" stroke-width="1.4" fill="none" opacity=".55">
+                <line x1="230" y1="266" x2="164" y2="332"/><line x1="230" y1="266" x2="296" y2="332"/>
+                <line x1="164" y1="332" x2="230" y2="398"/><line x1="296" y1="332" x2="230" y2="398"/>
               </g>
-              <g stroke="#f4c25a" stroke-width="1.8" marker-end="url(#ah)" fill="none" opacity="0.9">
-                <line x1="180" y1="221" x2="135" y2="251"/><line x1="225" y1="257" x2="184" y2="287"/>
+              <g stroke="#f4c25a" stroke-width="2" fill="none" marker-end="url(#ah2)" opacity=".95">
+                <line x1="230" y1="277" x2="230" y2="320"/>
+                <line x1="219" y1="332" x2="177" y2="332"/>
+                <line x1="241" y1="332" x2="283" y2="332"/>
+                <line x1="230" y1="343" x2="230" y2="385"/>
               </g>
-              <circle cx="180" cy="215" r="8" fill="url(#bg1)"/>
-              <circle cx="130" cy="255" r="8" fill="#f4c25a"/>
-              <circle cx="230" cy="255" r="8" fill="url(#bg2)"/>
-              <circle cx="180" cy="290" r="8" fill="url(#bg1)"/>
+              <circle cx="230" cy="266" r="22" fill="url(#hCpg)" class="pulse"/>
+              <circle cx="230" cy="332" r="27" fill="url(#hGold)" class="pulse"/>
+              <circle cx="164" cy="332" r="20" fill="url(#hGold)" class="pulse"/>
+              <circle cx="230" cy="266" r="9" fill="url(#gCpg)"/>
+              <circle cx="164" cy="332" r="8" fill="#f4c25a"/>
+              <circle cx="296" cy="332" r="8" fill="url(#gGraph)"/>
+              <circle cx="230" cy="398" r="8" fill="url(#gCpg)"/>
+              <circle cx="230" cy="332" r="10" fill="#f4c25a"/>
+              <circle cx="230" cy="332" r="10" fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-width="1"/>
+              <text x="262" y="258" class="lblA" font-size="10">do(X)</text>
+              <text x="230" y="424" text-anchor="middle" class="lblA">CAUSAL PROPERTY GRAPH</text>
             </svg>
           </div>
         </div>
