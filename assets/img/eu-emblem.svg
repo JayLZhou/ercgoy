@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 60" role="img" aria-label="Emblem of the European Union">
+  <defs>
+    <path id="eu-star" d="M0,-3 L0.68,-0.93 L2.85,-0.93 L1.09,0.36 L1.76,2.43 L0,1.15 L-1.76,2.43 L-1.09,0.36 L-2.85,-0.93 L-0.68,-0.93 Z" fill="#ffcc00"/>
+  </defs>
+  <rect width="90" height="60" fill="#003399"/>
+  <use href="#eu-star" transform="translate(45,12)"/>
+  <use href="#eu-star" transform="translate(54,14.41)"/>
+  <use href="#eu-star" transform="translate(60.59,21)"/>
+  <use href="#eu-star" transform="translate(63,30)"/>
+  <use href="#eu-star" transform="translate(60.59,39)"/>
+  <use href="#eu-star" transform="translate(54,45.59)"/>
+  <use href="#eu-star" transform="translate(45,48)"/>
+  <use href="#eu-star" transform="translate(36,45.59)"/>
+  <use href="#eu-star" transform="translate(29.41,39)"/>
+  <use href="#eu-star" transform="translate(27,30)"/>
+  <use href="#eu-star" transform="translate(29.41,21)"/>
+  <use href="#eu-star" transform="translate(36,14.41)"/>
+</svg>

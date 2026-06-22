@@ -1,0 +1,4 @@
+# Local tooling / OS cruft — not needed in the published site
+.claude/
+.DS_Store
+*.log

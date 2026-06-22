@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GO-Y · Unifying Graph Databases and Causal Models — ERC Advanced Grant</title>
+  <meta name="description" content="GO-Y (pronounced 'go why') is an ERC Advanced Grant led by Prof. Angela Bonifati at CNRS LIRIS / Université Claude Bernard Lyon 1, laying the theoretical foundations of causality-driven graph data management." />
+  <meta name="author" content="GO-Y — Angela Bonifati, CNRS LIRIS / Université Claude Bernard Lyon 1" />
+  <meta property="og:title" content="GO-Y · Unifying Graph Databases and Causal Models" />
+  <meta property="og:description" content="An ERC Advanced Grant teaching graph databases to ask not just 'what' and 'how' — but 'why'." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="GO-Y home">
+        <img class="logomark" src="assets/img/favicon.svg" alt="" />
+        <span class="brand-text">
+          <span class="brand-name">GO-Y</span>
+          <span class="brand-sub">ERC Advanced Grant</span>
+        </span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="events.html">News &amp; Events</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="people.html#positions" style="padding:.6em 1.1em">Join us</a>
+        <button class="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav-burger" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#vision">Vision</a>
+    <a href="#research">Research</a>
+    <a href="people.html">People</a>
+    <a href="publications.html">Publications</a>
+    <a href="events.html">News &amp; Events</a>
+    <a href="people.html#positions">Join us</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <canvas id="hero-canvas"></canvas>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <span class="pill">ERC · AdG 2024</span>
+          European Research Council — Frontier Research
+        </span>
+        <h1>
+          Unifying <span class="gradient-text">graph databases</span><br />and causal models
+          <span class="pron">GO-Y · pronounced “go why”</span>
+        </h1>
+        <p class="hero-lead">
+          Teaching graph databases to ask not just <strong>“what”</strong> and <strong>“how”</strong> — but <strong>“why”</strong>.
+          GO-Y lays the theoretical foundations of <em>causality-driven graph data management</em>: a radical
+          shift that makes causal reasoning a native, first-class capability of graph database systems.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#vision">
+            Explore the vision
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="people.html#positions">We’re hiring · PhD &amp; Postdoc</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section style="padding-top:clamp(2.5rem,5vw,4rem)">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat"><span class="num"><span data-count="2.32" data-dec="2" data-prefix="€" data-suffix="M">€2.32M</span></span><span class="label">EU funding</span></div>
+        <div class="stat"><span class="num"><span data-count="5" data-suffix=" yrs">5 yrs</span></span><span class="label">2025 – 2030</span></div>
+        <div class="stat"><span class="num"><span data-count="3">3</span></span><span class="label">Research pillars</span></div>
+        <div class="stat"><span class="num"><span data-count="1">1</span></span><span class="label">Bold new field</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISION / ABOUT ============ -->
+  <section id="vision">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">The scientific gap</span>
+          <h2>Two paradigms that have<br />never spoken to each other.</h2>
+          <div class="prose" style="margin-top:1.6rem">
+            <p class="lead-para">
+              Causal scientists draw <strong>causal DAGs</strong> and reason over them with <em>do</em>-calculus and
+              ad-hoc scripts. Graph databases query connected data at scale with declarative languages
+              like Cypher and the ISO <span class="mono">GQL</span> standard. Yet the two communities work
+              in isolation.
+            </p>
+            <p>
+              The result: causal graphs live <em>outside</em> any database — hand-curated artifacts that are never
+              systematically validated, stored, integrated, queried or versioned. Meanwhile graph database
+              systems remain <strong>causally blind</strong>: they answer “what is connected to what” and “how to
+              traverse”, but never “why”, and never “what if we intervene”.
+            </p>
+            <p>
+              <strong>GO-Y closes this gap.</strong> It turns causal reasoning from a bespoke, error-prone scripting
+              exercise into a rigorous, reproducible data-management discipline — a completely novel approach
+              to data management guided by the theory of causation.
+            </p>
+          </div>
+        </div>
+        <div class="reveal" data-delay="1">
+          <!-- Bridge diagram -->
+          <div class="card" style="padding:2.2rem">
+            <svg viewBox="0 0 360 360" width="100%" role="img" aria-label="Graph databases and causal models unify into causal property graphs">
+              <defs>
+                <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#9d7bff"/></linearGradient>
+                <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
+                <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#f4c25a"/></marker>
+              </defs>
+              <!-- left cluster: graph database -->
+              <circle cx="78" cy="70" r="40" fill="url(#bg1)" opacity="0.10"/>
+              <text x="78" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">GRAPH DB</text>
+              <g stroke="#5b8cff" stroke-width="1.6" opacity="0.55"><line x1="60" y1="58" x2="96" y2="58"/><line x1="60" y1="58" x2="78" y2="88"/><line x1="96" y1="58" x2="78" y2="88"/></g>
+              <circle cx="60" cy="58" r="6" fill="#5b8cff"/><circle cx="96" cy="58" r="6" fill="#5b8cff"/><circle cx="78" cy="88" r="6" fill="#5b8cff"/>
+              <!-- right cluster: causal model -->
+              <circle cx="282" cy="70" r="40" fill="url(#bg2)" opacity="0.10"/>
+              <text x="282" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8b96b8">CAUSAL DAG</text>
+              <g stroke="#f4c25a" stroke-width="1.8" marker-end="url(#ah)" fill="none" opacity="0.8"><line x1="266" y1="52" x2="252" y2="86"/><line x1="298" y1="52" x2="312" y2="86"/><line x1="258" y1="92" x2="306" y2="92"/></g>
+              <circle cx="266" cy="50" r="6" fill="#f4c25a"/><circle cx="298" cy="50" r="6" fill="#f4c25a"/><circle cx="252" cy="92" r="6" fill="#f4c25a"/><circle cx="312" cy="92" r="6" fill="#f4c25a"/>
+              <!-- merge arrows -->
+              <path d="M95 110 Q150 165 175 195" stroke="#5b8cff" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
+              <path d="M265 110 Q210 165 185 195" stroke="#2fe0c8" stroke-width="1.6" fill="none" opacity="0.5" stroke-dasharray="4 4"/>
+              <!-- unified: causal property graph -->
+              <text x="180" y="318" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#2fe0c8">CAUSAL PROPERTY GRAPH</text>
+              <g stroke="#cbd6ff" stroke-width="1.4" opacity="0.35" fill="none">
+                <line x1="180" y1="215" x2="130" y2="255"/><line x1="180" y1="215" x2="230" y2="255"/>
+                <line x1="130" y1="255" x2="180" y2="290"/><line x1="230" y1="255" x2="180" y2="290"/>
+                <line x1="130" y1="255" x2="230" y2="255"/>
+              </g>
+              <g stroke="#f4c25a" stroke-width="1.8" marker-end="url(#ah)" fill="none" opacity="0.9">
+                <line x1="180" y1="221" x2="135" y2="251"/><line x1="225" y1="257" x2="184" y2="287"/>
+              </g>
+              <circle cx="180" cy="215" r="8" fill="url(#bg1)"/>
+              <circle cx="130" cy="255" r="8" fill="#f4c25a"/>
+              <circle cx="230" cy="255" r="8" fill="url(#bg2)"/>
+              <circle cx="180" cy="290" r="8" fill="url(#bg1)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MISSION QUOTE ============ -->
+  <section style="padding-top:0">
+    <div class="container-narrow">
+      <div class="mission reveal">
+        <p class="q">“GO-Y pursues a radical shift towards causality-driven graph databases — laying solid
+          theoretical foundations and the tools that underpin causal graph operations.”</p>
+        <span class="cite">— GO-Y project abstract · PI Prof. Angela Bonifati</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ============ RESEARCH OBJECTIVES ============ -->
+  <section id="research">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Research programme</span>
+        <h2>Three pillars toward a causal graph database</h2>
+        <p>From a formal model, to a query language, to the lifecycle of causal knowledge — GO-Y builds the
+          full stack of causality-driven graph data management.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card obj-card reveal">
+          <span class="card-index">01 / Model</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 8l3 7M16 8l-3 7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>A formal causal property graph model</h3>
+          <p>A rigorous data model that unifies the labelled property graph with the semantics of causal DAGs —
+            making causal edges, interventions and assumptions <strong>first-class, typed, queryable</strong> elements
+            of the graph rather than ad-hoc external files.</p>
+        </article>
+
+        <article class="card obj-card reveal" data-delay="1">
+          <span class="card-index">02 / Language</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg>
+          </div>
+          <h3>Causal operators in graph query languages</h3>
+          <p>Extend declarative languages in the lineage of Cypher and ISO <span class="mono">GQL</span> with
+            causal query operators — interventions (<span class="mono">do()</span>), confounder identification,
+            <span class="mono">d</span>-separation and counterfactual “what-if” queries — bringing
+            <em>do</em>-calculus into the database query layer.</p>
+        </article>
+
+        <article class="card obj-card reveal" data-delay="2">
+          <span class="card-index">03 / Lifecycle</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>
+          </div>
+          <h3>Integration, consistency &amp; versioning</h3>
+          <p>Merge causal models from many experts and from observational data; detect and resolve contradictory
+            assumptions; enforce acyclicity; and <strong>version</strong> causal graphs so analyses are reproducible,
+            comparable and auditable as the science evolves.</p>
+        </article>
+      </div>
+
+      <!-- Query showcase -->
+      <div class="grid grid-2" style="margin-top:2.4rem; align-items:center; gap:3rem">
+        <div class="reveal">
+          <span class="eyebrow">What it looks like</span>
+          <h3 style="margin:.6rem 0 1rem">Causal questions, asked declaratively.</h3>
+          <p>Today, answering a counterfactual means writing bespoke scripts over a hand-drawn diagram.
+            GO-Y’s vision: express interventions and “what-if” analysis <strong>directly in the query language</strong>,
+            so they can be validated, optimised and reproduced like any other database query.</p>
+          <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">Illustrative syntax — part of the research agenda, not a released product.</p>
+        </div>
+        <div class="reveal" data-delay="1">
+          <div class="card" style="padding:0;overflow:hidden">
+            <div style="display:flex;gap:.5rem;padding:.9rem 1.2rem;border-bottom:1px solid var(--border);background:var(--surface-2)">
+              <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#febc2e"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#28c840"></span>
+              <span class="mono" style="margin-left:.6rem;font-size:.74rem;color:var(--muted)">causal-query · GQL+</span>
+            </div>
+            <pre class="mono" style="margin:0;padding:1.4rem;font-size:.83rem;line-height:1.7;overflow-x:auto;color:var(--text-soft)"><span style="color:var(--accent-3)">MATCH CAUSAL PATH</span> (s:Smoking)-[:CAUSES*]->(c:Cancer)
+<span style="color:var(--accent-3)">INTERVENE</span> <span style="color:var(--accent-2)">do</span>(s.level = <span style="color:var(--gold)">'none'</span>)
+<span style="color:var(--accent-3)">ADJUST FOR</span> confounders(s, c)
+<span style="color:var(--accent-3)">RETURN</span> <span style="color:var(--accent-2)">counterfactual</span>(c.risk)
+       <span style="color:var(--accent-3)">AS</span> averted_risk</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ============ KEY CONCEPTS ============ -->
+  <section id="concepts">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The vocabulary</span>
+        <h2>Key concepts</h2>
+        <p>The ideas GO-Y brings together — one from data management, one from the theory of causation.</p>
+      </div>
+      <div class="concepts">
+        <div class="concept reveal"><span class="term">Causal property graph</span><span class="def">The project’s central new structure: a labelled property graph endowed with causal semantics, so causal relationships, interventions and assumptions become first-class, storable, queryable and versionable elements of a graph database.</span></div>
+        <div class="concept reveal"><span class="term">Causal query operators</span><span class="def">New operators that express causal questions directly over stored graphs: interventions (the <span class="mono">do</span>-operator), counterfactual / “what-if” queries, confounder and adjustment-set identification, and <span class="mono">d</span>-separation reasoning.</span></div>
+        <div class="concept reveal"><span class="term">Causal DAG</span><span class="def">A directed acyclic graph whose edges encode cause–effect relationships among variables — the workhorse of causal inference, which GO-Y manages as a validated, integrated, versioned database artifact.</span></div>
+        <div class="concept reveal"><span class="term">Do-calculus</span><span class="def">Judea Pearl’s formal rules for reasoning about interventions. The do-operator <span class="mono">do(X = x)</span> models actively setting a variable rather than observing it — the machinery GO-Y embeds into graph query languages.</span></div>
+        <div class="concept reveal"><span class="term">GQL / Cypher</span><span class="def">Declarative property-graph query languages — Cypher pioneered by Neo4j, and GQL the recent ISO international standard. GO-Y extends this family so causal analysis becomes declarative and optimisable.</span></div>
+        <div class="concept reveal"><span class="term">Versioning &amp; provenance</span><span class="def">Tracking how causal models evolve over time — revisions to assumptions, competing hypotheses, and the lineage of causal conclusions — giving causal reasoning the reproducibility guarantees expected of modern data systems.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ============ FUNDING / ERC ============ -->
+  <section id="funding">
+    <div class="container">
+      <div class="split" style="align-items:center">
+        <div class="reveal">
+          <span class="eyebrow">Frontier research, funded by Europe</span>
+          <h2>An ERC Advanced Grant</h2>
+          <div class="prose" style="margin-top:1.4rem">
+            <p>The <strong>ERC Advanced Grant</strong> is the European Research Council’s most senior individual
+              scheme — awarded purely on scientific excellence to established research leaders pursuing
+              high-risk, high-gain ideas. It is among the most prestigious individual research grants in Europe,
+              with success rates well below 15%.</p>
+            <p>GO-Y is hosted by the <strong>Database (BD) team at CNRS LIRIS</strong>, Université Claude Bernard
+              Lyon 1, where PI Prof. Angela Bonifati leads the project from December 2025 through 2030.</p>
+          </div>
+          <div class="tag-row" style="margin-top:1.6rem">
+            <span class="tag accent">HORIZON-ERC</span>
+            <span class="tag">Call ERC-2024-AdG</span>
+            <span class="tag">Grant ID 101199575</span>
+          </div>
+        </div>
+        <div class="reveal" data-delay="1">
+          <div class="grid grid-2" style="gap:1rem">
+            <div class="card" style="text-align:center"><div class="num gradient-text" style="font-family:var(--font-display);font-size:2.2rem">€2.32M</div><div class="mono" style="font-size:.74rem;color:var(--muted);margin-top:.5rem;letter-spacing:.06em">EU CONTRIBUTION</div></div>
+            <div class="card" style="text-align:center"><div class="num gradient-text" style="font-family:var(--font-display);font-size:2.2rem">60 mo</div><div class="mono" style="font-size:.74rem;color:var(--muted);margin-top:.5rem;letter-spacing:.06em">DEC 2025 – NOV 2030</div></div>
+            <div class="card" style="text-align:center"><div class="num gradient-text" style="font-family:var(--font-display);font-size:2.2rem">Lyon 1</div><div class="mono" style="font-size:.74rem;color:var(--muted);margin-top:.5rem;letter-spacing:.06em">HOST · CNRS LIRIS</div></div>
+            <div class="card" style="text-align:center"><div class="num gradient-text" style="font-family:var(--font-display);font-size:2.2rem">AdG</div><div class="mono" style="font-size:.74rem;color:var(--muted);margin-top:.5rem;letter-spacing:.06em">ADVANCED GRANT</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ============ CTA ============ -->
+  <section>
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="eyebrow" style="justify-content:center">Join the project</span>
+        <h2>Help us build the first causal graph database.</h2>
+        <p>GO-Y is recruiting PhD students and postdoctoral researchers in graph data management,
+          databases and causal inference to join the team in Lyon.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="people.html#positions">See open positions
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="events.html">Latest news &amp; events</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="funding reveal">
+        <img class="eu-emblem" src="assets/img/eu-emblem.svg" alt="Emblem of the European Union" />
+        <p><strong>Funded by the European Union (ERC).</strong> GO-Y — “Unifying Graph Databases and Causal Models”
+          — is supported by the European Research Council under the European Union’s Horizon Europe research and
+          innovation programme (ERC Advanced Grant, Grant Agreement No. 101199575). Views and opinions expressed
+          are however those of the author(s) only and do not necessarily reflect those of the European Union or
+          the European Research Council. Neither the European Union nor the granting authority can be held
+          responsible for them.</p>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img class="logomark" src="assets/img/favicon.svg" alt="" />
+            <span class="brand-text"><span class="brand-name">GO-Y</span><span class="brand-sub">go why</span></span>
+          </a>
+          <p class="f-desc">Causality-driven graph data management. An ERC Advanced Grant hosted by the
+            Database team at CNRS LIRIS, Université Claude Bernard Lyon 1.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://perso.liris.cnrs.fr/angela.bonifati/" target="_blank" rel="noopener">PI homepage ↗</a></li>
+            <li><a href="https://liris.cnrs.fr/en/team/bd" target="_blank" rel="noopener">LIRIS Database team ↗</a></li>
+            <li><a href="https://cordis.europa.eu/project/id/101199575" target="_blank" rel="noopener">CORDIS fact sheet ↗</a></li>
+            <li><a href="people.html#positions">Open positions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> GO-Y · CNRS LIRIS / Université Claude Bernard Lyon 1. All rights reserved.</span>
+        <span class="mono" style="font-size:.78rem">Lyon · Villeurbanne, France</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/graph-hero.js"></script>
+</body>
+</html>
