@@ -57,6 +57,7 @@
   --ring: rgba(0, 51, 153, 0.4);
   --grid-line: rgba(12, 24, 60, 0.05);
   --accent: #2a55e6;
+  --accent-2: #0e7490; /* deep teal — legible on light backgrounds */
   --hero-fade: #f5f7fc;
 }
 
