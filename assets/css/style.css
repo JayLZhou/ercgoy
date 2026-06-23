@@ -471,6 +471,16 @@ a.member:hover .m-link { text-decoration: underline; }
 .funding p { font-size: 0.86rem; color: var(--muted); margin: 0; line-height: 1.55; }
 .funding strong { color: var(--text-soft); }
 
+/* Partner / funder logo strip */
+.partners { text-align: center; margin-bottom: 2.6rem; }
+.partners-label { display: block; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.3rem; }
+.partners-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.8rem; }
+.partners .logo { display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: .7rem 1.15rem; background: #fff; border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: var(--shadow-sm); transition: transform .2s, box-shadow .2s; }
+.partners .logo:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.partners .logo img { height: 34px; width: auto; max-width: 210px; object-fit: contain; display: block; }
+.partners .logo.erc img { height: 50px; }
+.partners .logo-txt { font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: .01em; color: #1a2238; }
+
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
 .footer-bottom .socials { display: flex; gap: 0.6rem; }
 .footer-bottom .socials a { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; border: 1px solid var(--border); color: var(--text-soft); transition: all .2s; }
