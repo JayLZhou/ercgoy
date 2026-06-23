@@ -9,12 +9,12 @@ const W = 1100, H = 440;
 
 // ---- main stars (the six objectives) — packed compactly ----
 const stars = [
-  { id:'01', x:140, y:150, c:'#7aa0ff', glow:22, title:['Data Modelling &','Query Languages'],     meta:'1 PhD · Y1–Y3',            ly:188 },
+  { id:'01', x:140, y:150, c:'#7aa0ff', glow:22, title:['Data Modeling and','Query Languages'],     meta:'1 PhD · Y1–Y3',            ly:188 },
   { id:'02', x:378, y:92,  c:'#7aa0ff', glow:22, title:['Property Graph','Causality Theory'],       meta:'1 postdoc · Y1–Y3',        ly:130 },
   { id:'03', x:288, y:312, c:'#b39bff', glow:22, title:['Causal Graph','Extraction from Data'],     meta:'1 PhD · Y3–Y5',            ly:350 },
-  { id:'04', x:600, y:182, c:'#f7cf72', glow:40, big:true, tag:'the causal core', title:['Causal Property','Graph Integration'], meta:'1 PhD, 1 postdoc · Y3–Y5', ly:226 },
-  { id:'05', x:738, y:330, c:'#5be9d6', glow:24, title:['Causal Graph','Temporality & Evolution'],  meta:'1 PhD, 1 postdoc · Y1–Y5', ly:366 },
-  { id:'06', x:965, y:150, c:'#bcd6ff', glow:38, big:true, tag:'the culmination', title:['A Causal Graph','Database'],           meta:'All · 1 eng. · Y1–Y5',    ly:196 },
+  { id:'04', x:600, y:182, c:'#f7cf72', glow:40, big:true, title:['Causal Property','Graph Integration'], meta:'1 PhD, 1 postdoc · Y3–Y5', ly:226 },
+  { id:'05', x:738, y:330, c:'#5be9d6', glow:24, title:['Causal Graph','Temporality and Evolution'],  meta:'1 PhD, 1 postdoc · Y1–Y5', ly:366 },
+  { id:'06', x:965, y:150, c:'#bcd6ff', glow:38, big:true, title:['A Causal Graph','Database'],           meta:'All · 1 eng. · Y1–Y5',    ly:196 },
 ];
 const P = {}; stars.forEach((s,i)=>P[i+1]=s);
 

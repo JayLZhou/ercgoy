@@ -13,6 +13,7 @@
       var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("goy-theme", next); } catch (e) {}
+      toggle.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
       window.dispatchEvent(new CustomEvent("goy:theme", { detail: next }));
     });
   }
@@ -30,9 +31,9 @@
   var burger = document.querySelector(".nav-burger");
   var menu = document.querySelector(".mobile-menu");
   if (burger && menu) {
-    burger.addEventListener("click", function () { menu.classList.toggle("open"); });
+    burger.addEventListener("click", function () { var open = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", open ? "true" : "false"); });
     menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { menu.classList.remove("open"); });
+      a.addEventListener("click", function () { menu.classList.remove("open"); if (burger) burger.setAttribute("aria-expanded", "false"); });
     });
   }
 

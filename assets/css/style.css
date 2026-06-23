@@ -50,7 +50,7 @@
   --border-strong: rgba(12, 24, 60, 0.22);
   --text: #0c1430;
   --text-soft: #28335c;
-  --muted: #5a648a;
+  --muted: #4c5573;
   --shadow: 0 30px 70px -34px rgba(20, 35, 90, 0.30);
   --shadow-sm: 0 12px 30px -18px rgba(20, 35, 90, 0.25);
   --glow: 0 0 0 1px rgba(0, 51, 153, 0.18), 0 24px 60px -28px rgba(0, 51, 153, 0.28);
@@ -523,3 +523,9 @@ a.member:hover .m-link { text-decoration: underline; }
 @media (max-width: 460px) {
   .grid-4, .stats { grid-template-columns: 1fr; }
 }
+
+/* footer contact + member focus (added in polish pass) */
+.f-contact { margin-top: 1rem; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+.f-contact a { color: var(--text-soft); }
+.f-contact a:hover { color: var(--accent); }
+a.member:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }

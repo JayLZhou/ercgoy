@@ -29,11 +29,11 @@
       </nav>
       <div class="nav-actions">
         <a class="btn btn-primary" href="#positions" style="padding:.6em 1.1em">Join us</a>
-        <button class="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+        <button class="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme" aria-pressed="false">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
-        <button class="nav-burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <button class="nav-burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
       </div>
     </div>
   </header>
@@ -192,21 +192,22 @@
           — is supported by the European Research Council under the European Union’s Horizon Europe research and
           innovation programme (ERC Advanced Grant, Grant Agreement No. 101199575). Views and opinions expressed
           are however those of the author(s) only and do not necessarily reflect those of the European Union or
-          the European Research Council.</p>
+          the European Research Council. Neither the European Union nor the granting authority can be held responsible for them.</p>
       </div>
       <div class="partners reveal">
         <span class="partners-label">Funded &amp; hosted by</span>
         <div class="partners-row">
-          <a class="logo erc" href="https://erc.europa.eu" target="_blank" rel="noopener" aria-label="European Research Council"><span class="logo-txt">ERC</span><img src="assets/img/logos/erc.jpg" alt="European Research Council" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
-          <a class="logo" href="https://www.cnrs.fr" target="_blank" rel="noopener" aria-label="CNRS"><span class="logo-txt">CNRS</span><img src="assets/img/logos/cnrs.svg" alt="CNRS" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
-          <a class="logo" href="https://www.univ-lyon1.fr" target="_blank" rel="noopener" aria-label="Université Claude Bernard Lyon 1"><span class="logo-txt">Lyon 1</span><img src="assets/img/logos/lyon1.svg" alt="Université Claude Bernard Lyon 1" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
-          <a class="logo" href="https://liris.cnrs.fr" target="_blank" rel="noopener" aria-label="LIRIS"><span class="logo-txt">LIRIS</span><img src="assets/img/logos/liris.png" alt="LIRIS" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
+          <a class="logo erc" href="https://erc.europa.eu" target="_blank" rel="noopener" aria-label="European Research Council"><span class="logo-txt">ERC</span><img loading="lazy" src="assets/img/logos/erc.jpg" alt="European Research Council" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
+          <a class="logo" href="https://www.cnrs.fr" target="_blank" rel="noopener" aria-label="CNRS"><span class="logo-txt">CNRS</span><img loading="lazy" src="assets/img/logos/cnrs.svg" alt="CNRS" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
+          <a class="logo" href="https://www.univ-lyon1.fr" target="_blank" rel="noopener" aria-label="Université Claude Bernard Lyon 1"><span class="logo-txt">Lyon 1</span><img loading="lazy" src="assets/img/logos/lyon1.svg" alt="Université Claude Bernard Lyon 1" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
+          <a class="logo" href="https://liris.cnrs.fr" target="_blank" rel="noopener" aria-label="LIRIS"><span class="logo-txt">LIRIS</span><img loading="lazy" src="assets/img/logos/liris.png" alt="LIRIS" onload="this.previousElementSibling.style.display='none'" onerror="this.remove()" /></a>
         </div>
       </div>
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html"><img class="logomark" src="assets/img/favicon.svg" alt="" /><span class="brand-text"><span class="brand-name">GO-Y</span><span class="brand-sub">go why</span></span></a>
           <p class="f-desc">Causality-driven graph data management. An ERC Advanced Grant hosted by the Database team at CNRS LIRIS, Université Claude Bernard Lyon 1.</p>
+          <p class="f-contact"><a href="mailto:angela.bonifati@univ-lyon1.fr">angela.bonifati@univ-lyon1.fr</a><br />CNRS LIRIS · Université Claude Bernard Lyon 1 · Villeurbanne, France</p>
         </div>
         <div>
           <h4>Explore</h4>
