@@ -529,3 +529,23 @@ a.member:hover .m-link { text-decoration: underline; }
 .f-contact a { color: var(--text-soft); }
 .f-contact a:hover { color: var(--accent); }
 a.member:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+
+/* ---------- Join / hiring band ---------- */
+.join-band { position: relative; overflow: hidden; border-radius: 26px; padding: clamp(2.6rem,5vw,4rem); text-align: center; background: var(--bg-2); border: 1px solid var(--border-strong); box-shadow: var(--shadow); }
+.join-band::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(680px 320px at 12% -25%, rgba(91,140,255,.30), transparent 64%), radial-gradient(620px 360px at 110% 120%, rgba(157,123,255,.26), transparent 64%); }
+.join-band::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-brand); }
+.join-band > * { position: relative; }
+.join-head h2 { margin: .5rem 0 1rem; }
+.join-head p { max-width: 600px; margin: 0 auto; font-size: 1.06rem; }
+.join-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 800px; margin: 2.3rem auto 0; text-align: left; }
+.join-role { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 1.5rem 1.6rem; color: inherit; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s, background .3s; }
+.join-role:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); background: var(--surface-2); }
+.role-kind { display: inline-flex; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); padding: .32em .7em; border-radius: 999px; }
+.join-role h3 { font-size: 1.16rem; margin: .85rem 0 .5rem; }
+.join-role p { font-size: .93rem; margin: 0 0 1rem; }
+.role-apply { display: inline-flex; align-items: center; gap: .35em; font-weight: 600; font-size: .9rem; color: var(--accent); }
+.role-apply svg { width: 1em; height: 1em; transition: transform .25s; }
+.join-role:hover .role-apply svg { transform: translateX(4px); }
+.join-how { max-width: 620px; margin: 2.2rem auto 0; font-size: .96rem; color: var(--text-soft); }
+.join-how strong { color: var(--text); }
+@media (max-width: 640px) { .join-roles { grid-template-columns: 1fr; } }
