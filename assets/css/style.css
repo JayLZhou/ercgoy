@@ -549,3 +549,7 @@ a.member:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
 .join-how { max-width: 620px; margin: 2.2rem auto 0; font-size: .96rem; color: var(--text-soft); }
 .join-how strong { color: var(--text); }
 @media (max-width: 640px) { .join-roles { grid-template-columns: 1fr; } }
+
+/* Applications card illustrations */
+.app-fig { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.3rem; }
+.app-fig svg { display: block; width: 100%; }
