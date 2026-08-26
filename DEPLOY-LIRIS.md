@@ -1,44 +1,53 @@
-# Deploying GO-Y to `projet.liris.cnrs.fr`
+# Deploying GO-Y to a `liris.cnrs.fr` address
 
-Target: **`https://projet.liris.cnrs.fr/<project>/`** (e.g. `.../go-y/`)
+Confirmed by the LIRIS technical service: a static site can be hosted under
+`liris.cnrs.fr` by requesting a **project account** and synchronising a GitLab
+project onto it.
 
-This repo already contains `.gitlab-ci.yml`, adapted from the
-[LIRIS Hugo-theme deployment docs](https://projet.liris.cnrs.fr/hugo-theme/docs/deployment/).
-The pipeline builds nothing (the site is plain static HTML/CSS/JS) and rsyncs the
-files to the LIRIS project space on every push to `main`.
+**Official references (LIRIS intranet — requires login):**
 
-> **Why no Hugo?** The LIRIS pipeline publishes whatever ends up in `public/` —
-> for a Hugo site that is `hugo build` output, here it is the static files
-> themselves. All internal links are **relative**, so the site works unchanged at
-> any sub-path (verified locally under `/go-y/`).
+- Request a project account — <https://liris.cnrs.fr/intranet/service-technique/compte-projet>
+- Static-site continuous integration — <https://liris.cnrs.fr/intranet/service-technique/integration-contenue-site-statique>
+
+This repo already ships `.gitlab-ci.yml`, built on the same LIRIS infrastructure
+(`connect.liris.cnrs.fr` + rsync into the project's `public_html`) that the
+[LIRIS Hugo-theme deployment docs](https://projet.liris.cnrs.fr/hugo-theme/docs/deployment/)
+describe. **Check it against the intranet static-site doc above and adjust the
+rsync target if that doc specifies a different path.**
+
+> **No Hugo rewrite needed.** LIRIS explicitly supports static sites, and their
+> pipeline publishes whatever lands in `public/`. Our `build` job assembles the
+> static files directly. All internal links are **relative**, so the site works
+> unchanged whether the final URL is a sub-domain (`go-y.liris.cnrs.fr`) or a
+> sub-path (`projet.liris.cnrs.fr/go-y/`) — verified locally under `/go-y/`.
 
 ---
 
 ## Steps
 
-### 1. Request the project space (do this first — it is the long pole)
+### 1. Request the project account  ← start here
 
-Ask the LIRIS IT team to create a project web space, which gives you:
+Fill the form at
+<https://liris.cnrs.fr/intranet/service-technique/compte-projet>.
+Draft answers are in [`liris-account-request.md`](liris-account-request.md) —
+copy/paste and adjust.
 
-- a directory `/home-projets/<project>/public_html` on `connect.liris.cnrs.fr`
-- the public URL `https://projet.liris.cnrs.fr/<project>/`
-- an rsync-restricted (`rrsync`) account for CI to push into it
+You should come back with:
 
-Contact: the LIRIS IT service that maintains the theme — the Hugo theme lives at
-`gitlab.liris.cnrs.fr/cell-si/hugo-theme-liris`, so **cell-si** is the group to
-ask (confirm the current channel with the lab: a ticket, `sysadmin@liris.cnrs.fr`,
-or Angela's admin contact). Mention it is for the **ERC GO-Y** project and give
-the desired short name, e.g. `go-y`.
+- a project account + its `public_html` directory on `connect.liris.cnrs.fr`
+- the public URL (confirm whether it is `go-y.liris.cnrs.fr` or
+  `projet.liris.cnrs.fr/go-y/`)
+- the login to use as `LIRIS_LOGIN` below
 
-### 2. Create the GitLab repo
+### 2. Create the GitLab repo and push
 
 ```bash
 git remote add liris https://gitlab.liris.cnrs.fr/<group>/go-y.git
 git push --set-upstream liris main
 ```
 
-(GitHub stays as-is; `.gitlab-ci.yml` is ignored by GitHub, and GitHub Pages
-keeps working as a preview. Push to both remotes to keep them in sync.)
+GitHub stays as-is: `.gitlab-ci.yml` is inert on GitHub, so GitHub Pages keeps
+serving the preview. Push to both remotes to keep them in sync.
 
 ### 3. Create the deploy SSH key
 
@@ -46,21 +55,21 @@ keeps working as a preview. Push to both remotes to keep them in sync.)
 ssh-keygen -t ed25519 -C "goy-gitlab-ci" -f ~/.ssh/goy_ci
 ```
 
-Give the **public** key (`~/.ssh/goy_ci.pub`) to LIRIS IT so it is installed on
-the rsync account. Keep the private key for step 4.
+Send the **public** key (`~/.ssh/goy_ci.pub`) to the technical service so it is
+installed on the project account. Keep the private key for step 4.
 
 ### 4. Set the CI/CD variables
 
-In GitLab: **Settings → CI/CD → Variables**
+GitLab → **Settings → CI/CD → Variables**
 
 | Variable | Value | Notes |
 |---|---|---|
-| `LIRIS_LOGIN` | your LIRIS login | the rsync account |
-| `SSH_PRIVATE_KEY` | contents of `~/.ssh/goy_ci` | mark **Masked**/**Protected** |
+| `LIRIS_LOGIN` | the project account login | used as the rsync target |
+| `SSH_PRIVATE_KEY` | contents of `~/.ssh/goy_ci` | mark **Masked** + **Protected** |
 | `SSH_KNOWN_HOSTS` | output of `ssh-keyscan connect.liris.cnrs.fr` | |
 
 ```bash
-ssh-keyscan connect.liris.cnrs.fr        # paste the output into SSH_KNOWN_HOSTS
+ssh-keyscan connect.liris.cnrs.fr        # paste output into SSH_KNOWN_HOSTS
 ```
 
 ### 5. Push and verify
@@ -69,20 +78,15 @@ ssh-keyscan connect.liris.cnrs.fr        # paste the output into SSH_KNOWN_HOSTS
 git push liris main
 ```
 
-The pipeline runs `build` → `deploy`. Then open
-`https://projet.liris.cnrs.fr/<project>/` and hard-refresh.
+Pipeline runs `build` → `deploy`; then open the project URL and hard-refresh.
 
 ---
 
 ## Notes
 
-- **Adding a page?** Add its filename to the `cp` line in `.gitlab-ci.yml`'s
-  `build` job, or switch that line to a glob (`cp *.html public/`).
-- **`--delete`** is on: files removed from the repo are removed from the server.
-- **Custom sub-domain** (e.g. `go-y.liris.cnrs.fr`) is a separate request to
-  LIRIS IT; the site itself needs no change, since all paths are relative.
-- If LIRIS asks for the **official theme** for branding consistency, the content
-  here maps onto it directly: `people.html` → `content/members/`,
-  `publications.html` → `content/publications/`, `events.html` →
-  `content/events/` (see the theme's *Adding members / publications / events*
-  docs). That is a rewrite, not a redeploy — ask before starting it.
+- **Adding a page?** Add its filename to the `cp` line in the `build` job of
+  `.gitlab-ci.yml`, or switch to a glob (`cp *.html public/`).
+- **`--delete` is on**: files removed from the repo are removed from the server.
+- If the intranet doc gives a different rsync destination (e.g. an explicit
+  `…:public_html/` path rather than the bare `…:` used by the Hugo-theme docs),
+  update the `rsync` line in `.gitlab-ci.yml` to match.
