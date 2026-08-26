@@ -1,0 +1,53 @@
+# GO-Y — automatic deployment to projet.liris.cnrs.fr
+#
+# Adapted from the LIRIS Hugo-theme deployment docs:
+#   https://projet.liris.cnrs.fr/hugo-theme/docs/deployment/
+#
+# The GO-Y site is plain static HTML/CSS/JS, so there is no Hugo build step —
+# the build stage simply assembles the deployable files into public/, which the
+# deploy stage rsyncs to the LIRIS project space (restricted by rrsync to
+# /home-projets/<project>/public_html).
+#
+# All internal links are relative, so no baseURL rewriting is needed: the same
+# files work at https://projet.liris.cnrs.fr/<project>/ and anywhere else.
+#
+# Required CI/CD variables (Settings > CI/CD > Variables):
+#   LIRIS_LOGIN      your LIRIS login (the rsync account)
+#   SSH_PRIVATE_KEY  private key (ed25519), type "File" or masked variable
+#   SSH_KNOWN_HOSTS  output of: ssh-keyscan connect.liris.cnrs.fr
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: alpine:latest
+  tags:
+    - docker
+  script:
+    - mkdir -p public
+    - cp index.html people.html publications.html events.html public/
+    - cp -r assets public/
+  artifacts:
+    paths:
+      - public/
+
+deploy:
+  stage: deploy
+  image: instrumentisto/rsync-ssh
+  tags:
+    - docker
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/known_hosts
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  script:
+    - rsync -az --delete public/ "$LIRIS_LOGIN@connect.liris.cnrs.fr:"
+  only:
+    - main

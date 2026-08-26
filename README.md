@@ -56,8 +56,16 @@ To update the site:
 git add -A && git commit -m "Update site" && git push
 ```
 
-It also works on any other static host (the LIRIS web server, Netlify, Vercel, etc.) — no
-configuration required. All internal links are relative, so it runs from a subpath or a domain root.
+### LIRIS (official project domain)
+
+`.gitlab-ci.yml` deploys the site to **`https://projet.liris.cnrs.fr/<project>/`** on every push
+to `main` of a `gitlab.liris.cnrs.fr` repo, following the
+[LIRIS deployment docs](https://projet.liris.cnrs.fr/hugo-theme/docs/deployment/). It needs a
+LIRIS project space plus three CI/CD variables — see **[DEPLOY-LIRIS.md](DEPLOY-LIRIS.md)** for the
+full checklist.
+
+All internal links are relative, so the same files run from a sub-path or a domain root, and the
+GitHub Pages preview and the LIRIS site can be served from one repo.
 
 ## Customising
 
