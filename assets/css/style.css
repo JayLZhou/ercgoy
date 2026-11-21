@@ -191,7 +191,7 @@ section.alt { background: var(--bg-2); border-top: 1px solid var(--border); bord
 a.card:hover { border-color: var(--accent-line); box-shadow: var(--shadow); }
 .card h3 { margin: .25rem 0 .6rem; }
 .card p { font-size: .97rem; }
-.app-fig { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.3rem; }
+.app-fig { border-radius: 12px; overflow: hidden; margin-bottom: 1.3rem; box-shadow: 0 16px 32px -22px rgba(15, 29, 64, .55); }
 .app-fig svg { display: block; width: 100%; }
 
 /* ---------- Tags ---------- */
@@ -313,7 +313,8 @@ a.member:hover .m-link { text-decoration: underline; text-underline-offset: 3px;
 .partners .logo:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
 .partners .logo img { display: block; height: 40px; width: auto; max-width: 200px; object-fit: contain; }
 .partners .logo.erc img { height: 58px; }
-.partners .logo.lyon1 img { height: 56px; }
+.partners .logo.lyon1 { padding: .35rem .9rem; }
+.partners .logo.lyon1 img { height: 62px; }
 .partners .logo-txt { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
 .footer .brand { margin-bottom: .9rem; }
