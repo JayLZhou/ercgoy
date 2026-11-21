@@ -2,27 +2,10 @@
 (function () {
   "use strict";
 
-  /* ---- Theme ---- */
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("goy-theme"); } catch (e) {}
-  if (stored) root.setAttribute("data-theme", stored);
-  var toggle = document.querySelector(".theme-toggle");
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("goy-theme", next); } catch (e) {}
-      toggle.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
-      window.dispatchEvent(new CustomEvent("goy:theme", { detail: next }));
-    });
-  }
-
-  /* ---- Nav on scroll ---- */
+  /* ---- Nav shadow once the page scrolls ---- */
   var nav = document.querySelector(".nav");
   function onScroll() {
-    if (!nav) return;
-    nav.classList.toggle("scrolled", window.scrollY > 24);
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 8);
   }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -31,63 +14,28 @@
   var burger = document.querySelector(".nav-burger");
   var menu = document.querySelector(".mobile-menu");
   if (burger && menu) {
-    burger.addEventListener("click", function () { var open = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", open ? "true" : "false"); });
+    burger.addEventListener("click", function () {
+      var open = menu.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
     menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { menu.classList.remove("open"); if (burger) burger.setAttribute("aria-expanded", "false"); });
+      a.addEventListener("click", function () {
+        menu.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
-  /* ---- Scroll reveal ---- */
-  var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && reveals.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
-  }
-
-  /* ---- Animated counters ---- */
-  var counters = document.querySelectorAll("[data-count]");
-  if ("IntersectionObserver" in window && counters.length) {
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var el = en.target;
-        var target = parseFloat(el.getAttribute("data-count"));
-        var dec = (el.getAttribute("data-dec") | 0);
-        var suffix = el.getAttribute("data-suffix") || "";
-        var prefix = el.getAttribute("data-prefix") || "";
-        var start = null, dur = 1500;
-        function step(ts) {
-          if (start === null) start = ts;
-          var p = Math.min((ts - start) / dur, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = prefix + (target * eased).toFixed(dec) + suffix;
-          if (p < 1) requestAnimationFrame(step);
-          else el.textContent = prefix + target.toFixed(dec) + suffix;
-        }
-        requestAnimationFrame(step);
-        cio.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (el) { cio.observe(el); });
-  }
-
-  /* ---- Active section in nav (home page) ---- */
+  /* ---- Highlight the current section in the nav (home page) ---- */
   var sections = document.querySelectorAll("section[id]");
-  var navLinks = document.querySelectorAll(".nav-links a[href^='#'], .nav-links a[href*='#']");
+  var navLinks = document.querySelectorAll(".nav-links a[href^='#']");
   if (sections.length && navLinks.length && "IntersectionObserver" in window) {
     var sio = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
         var id = en.target.getAttribute("id");
         navLinks.forEach(function (l) {
-          var href = l.getAttribute("href") || "";
-          l.classList.toggle("active", href.indexOf("#" + id) !== -1);
+          l.classList.toggle("active", l.getAttribute("href") === "#" + id);
         });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });

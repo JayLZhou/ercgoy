@@ -1,15 +1,14 @@
 # Member photos
 
-Drop square head-shots here with these exact filenames — they render as round avatars
-automatically. If a file is missing, the card falls back to the person's initials, so the
-page never shows a broken image.
+Square head-shots shown as round avatars on `people.html`. If a file is missing, the card
+falls back to the person's initials, so the page never shows a broken image.
 
-| File            | Person          | Status            |
-|-----------------|-----------------|-------------------|
-| `angela.png`    | Angela Bonifati | ✅ added (from her homepage) |
-| `yingli.jpg`    | Yingli Zhou     | needs photo       |
-| `dazhuo.jpg`    | Dazhuo Qiu      | needs photo       |
-| `huizhong.jpg`  | Huizhong Wang   | needs photo       |
+| File            | Person          | Source |
+|-----------------|-----------------|--------|
+| `angela.png`    | Angela Bonifati | her homepage (perso.liris.cnrs.fr/angela.bonifati, `bonifati.png`) |
+| `yingli.jpg`    | Yingli Zhou     | jaylzhou.github.io (`images/me.jpg`) |
+| `dazhuo.jpg`    | Dazhuo Qiu      | sites.google.com/view/dazhuo-qiu (profile photo, cropped) |
+| `huizhong.jpg`  | Huizhong Wang   | huiz-w.github.io (`profile.svg`, embedded photo, padded to square) |
 
-Tips: use a roughly **square** image (e.g. 600×600), JPG or PNG. `.png` works too — if you
-use PNG, update the `src` extension in `people.html` accordingly (or just rename to `.jpg`).
+To add or replace a photo: use a roughly square, face-centred image, save it as 480×480 JPG
+with the person's first name as the filename, and reference it in `people.html`.

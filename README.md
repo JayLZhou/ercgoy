@@ -6,14 +6,14 @@ CNRS LIRIS / Université Claude Bernard Lyon 1.
 
 A fast, dependency-free **static site** — just HTML, CSS and vanilla JS. No build step, no framework.
 
-🌐 **Live:** https://jaylzhou.github.io/ercgoy/ · **Repo:** https://github.com/JayLZhou/ercgoy
+🌐 **Live:** https://erc-go-y.projet.liris.cnrs.fr/ (official, LIRIS) · **Preview:** https://jaylzhou.github.io/ercgoy/ · **Repo:** https://github.com/JayLZhou/ercgoy
 
 ## Pages
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Home — hero, vision/scientific gap, three research pillars, key concepts, ERC funding |
-| `people.html` | PI, team, collaborators, and open positions |
+| `index.html` | Home — hero, scientific gap, six objectives (constellation chart), applications, ERC funding, hiring |
+| `people.html` | PI, team (with photos), and open positions |
 | `publications.html` | Filterable list of foundational & recent publications |
 | `events.html` | News timeline, planned workshops/schools, community venues |
 
@@ -23,12 +23,14 @@ A fast, dependency-free **static site** — just HTML, CSS and vanilla JS. No bu
 .
 ├── index.html  people.html  publications.html  events.html
 ├── assets/
-│   ├── css/style.css          # full design system (dark + light themes)
-│   ├── js/main.js             # nav, theme toggle, scroll-reveal, counters, pub filters
-│   ├── js/graph-hero.js       # animated causal-graph hero (canvas)
+│   ├── css/style.css          # all styles (design tokens at the top, in :root)
+│   ├── js/main.js             # mobile menu, nav highlight, publication filters
 │   └── img/
 │       ├── favicon.svg        # causal-graph logomark
-│       └── eu-emblem.svg      # official EU emblem (required ERC acknowledgement)
+│       ├── eu-emblem.svg      # official EU emblem (required ERC acknowledgement)
+│       ├── logos/             # ERC, CNRS, Lyon 1, LIRIS
+│       └── people/            # member photos (480×480 squares)
+├── deploy-liris.sh            # publish to the LIRIS server
 └── README.md
 ```
 
@@ -58,11 +60,21 @@ git add -A && git commit -m "Update site" && git push
 
 ### LIRIS (official project domain)
 
-`.gitlab-ci.yml` deploys the site to **`https://projet.liris.cnrs.fr/<project>/`** on every push
-to `main` of a `gitlab.liris.cnrs.fr` repo, following the
-[LIRIS deployment docs](https://projet.liris.cnrs.fr/hugo-theme/docs/deployment/). It needs a
-LIRIS project space plus three CI/CD variables — see **[DEPLOY-LIRIS.md](DEPLOY-LIRIS.md)** for the
-full checklist.
+The official site is the LIRIS project account `erc-go-y`, served at
+**https://erc-go-y.projet.liris.cnrs.fr/** from `/home-projets/erc-go-y/public_html/` on
+`connect.liris.cnrs.fr`. Publish with:
+
+```bash
+./deploy-liris.sh -n   # dry run: list what would change
+./deploy-liris.sh      # upload, then check the live pages match
+```
+
+The script logs in as `yzhou1` with the key `~/.ssh/id_rsa_dsf` (override with `LIRIS_LOGIN` /
+`LIRIS_KEY`) and uploads only the four pages and `assets/`. Always commit and push to GitHub as well,
+so the repo stays the source of truth. After changing `style.css` or `main.js`, bump the `?v=` date
+on their links in all four pages so browsers fetch the new files.
+
+[DEPLOY-LIRIS.md](DEPLOY-LIRIS.md) describes an alternative GitLab CI route (not set up).
 
 All internal links are relative, so the same files run from a sub-path or a domain root, and the
 GitHub Pages preview and the LIRIS site can be served from one repo.
@@ -70,9 +82,9 @@ GitHub Pages preview and the LIRIS site can be served from one repo.
 ## Customising
 
 - **Colours / fonts / spacing:** CSS custom properties at the top of `assets/css/style.css` (`:root`).
-- **Light theme:** the same tokens are overridden under `[data-theme="light"]`. A toggle is in the nav.
+  Headings use Source Serif 4, body text Inter (both from Google Fonts).
 - **Content:** edit the HTML directly — each page is self-contained with a shared nav/footer block.
-- **Hero animation:** tune node count, speed and colours in `assets/js/graph-hero.js`.
+- **Member photos:** see `assets/img/people/README.md`.
 
 ## Notes on content
 

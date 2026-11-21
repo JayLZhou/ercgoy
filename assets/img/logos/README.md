@@ -5,7 +5,7 @@ white chip and falls back to a text wordmark if its file is missing.
 
 | File        | Org                                  | Status |
 |-------------|--------------------------------------|--------|
-| `erc.jpg`   | European Research Council            | ✅ fetched (Wikimedia Commons) — the orange-swirl "erc" logo (a higher-res SVG/PNG from erc.europa.eu/support/logos would be sharper) |
+| `erc.png`   | European Research Council            | ✅ orange-swirl "erc" mark without the text line (supplied by the team, 2026-11-21) |
 | `cnrs.svg`  | CNRS                                 | ✅ fetched (Wikimedia Commons) |
 | `lyon1-2026.png` | Lyon 1 Université Claude Bernard | Official 2026 web logo, downloaded 2026-09-15 from https://www.univ-lyon1.fr/universite/identite-et-chiffres-cles/nouveau-logo-universite-claude-bernard-lyon-1 |
 | `liris.png` | LIRIS laboratory                     | ✅ fetched (liris.cnrs.fr official logo) |
