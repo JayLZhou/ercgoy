@@ -365,7 +365,8 @@ a.member:hover .m-link { text-decoration: underline; text-underline-offset: 3px;
 
 /* ---------- Objectives constellation (home page) ---------- */
 .wp-figure { margin: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 22px; }
-.wp-figure svg { display: block; width: 100%; height: auto; min-width: 680px; }
+.wp-figure svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.wp-figure + .steps { margin-top: 2rem; }
 
 /* ---------- Four steps toward trustworthy AI ---------- */
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
